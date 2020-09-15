@@ -19,7 +19,7 @@ import javax.mail.internet.MimeMultipart;
 
 public class Email {
 
-	public static void envia(String from, String to, String username, String password, String subject, String content,
+	public static void envia(String from, String to, final String username, final String password, String subject, String content,
 			String filename) {
 
 		Properties props = new Properties();
