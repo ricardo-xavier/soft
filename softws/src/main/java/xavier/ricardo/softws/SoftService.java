@@ -233,4 +233,5 @@ public class SoftService {
 
 // 01/05/2020 - 2.6.2 - só estava mostrando o primeiro item do pedido
 // 15/09/2020 - 2.7.0 - migração para o git
+//              copiar jaxb(api,core,impl) para o lib(removido do java 11)
 
