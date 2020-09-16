@@ -96,7 +96,7 @@ public class Email {
 		String from = "softplacemoveisbh@gmail.com";
 		String to = "ricardo.costa.xavier@gmail.com";
 		String username = "softplacemoveisbh";
-		String password = "soft101010";
+		String password = null;
 		String subject = "teste";
 		String content = "/tmp/teste.txt";
 		String filename = null;

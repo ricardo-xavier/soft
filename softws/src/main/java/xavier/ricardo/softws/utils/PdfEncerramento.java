@@ -30,6 +30,7 @@ import com.itextpdf.layout.element.Image;
 import xavier.ricardo.softws.dao.AgendaDao;
 import xavier.ricardo.softws.dao.BancoDados;
 import xavier.ricardo.softws.dao.ClienteDao;
+import xavier.ricardo.softws.dao.EmailDao;
 import xavier.ricardo.softws.dao.FilialDao;
 import xavier.ricardo.softws.dao.FuncionarioDao;
 import xavier.ricardo.softws.tipos.Cliente;
@@ -38,6 +39,7 @@ import xavier.ricardo.softws.tipos.Encerramento;
 import xavier.ricardo.softws.tipos.Endereco;
 import xavier.ricardo.softws.tipos.Funcionario;
 import xavier.ricardo.softws.tipos.Ponto;
+import xavier.ricardo.softws.tipos.PrmsEmail;
 
 public class PdfEncerramento {
 
@@ -323,6 +325,8 @@ public class PdfEncerramento {
 			}
 		}
 		
+		PrmsEmail prms = EmailDao.recupera();
+		
 		bd.close();
 		/*
 		Funcionario func = new Funcionario();
@@ -334,32 +338,32 @@ public class PdfEncerramento {
 		String pdf = "/tmp/" + chave + "_encerramento_" + df.format(new Date()) + ".pdf";
 		new PdfEncerramento().gera(pdf, encerramento, func, filial, cliente, contato, objetivo, dataEncerramento);
 		
+		String nomeCliente = "";
+		if (cliente != null) {
+			nomeCliente = " - " + cliente.getNome();
+		}
+		
 		try {
 			System.err.println("enviando email 587 ricardo");
-			/*
-			Email.envia("softapp", "fabiana.ferrari@softplacemoveis.com.br", 
-				"softapp", "softapp", 
-				"Encerramento do agendamento Softplace", 
-				"Esse email foi enviado automaticamente pelo SoftApp devido ao encerramento do seu agendamento.", 
-				pdf);
-			*/
 			df = new SimpleDateFormat("dd/MM/yyyy");
-			String subject = "[SOFTPLACE] Encerramento Agendamento " + df.format(new Date());
-			String nomeCliente = "";
-			if (cliente != null) {
-				nomeCliente = " - " + cliente.getNome();
-				subject += nomeCliente;
-			}
-			String destinatarios = "fabiana.ferrari@softplacemoveis.com.br;ricardo.costa.xavier@gmail.com";
-			if ((contato != null) && (contato.getEmail() != null)) {
-				destinatarios += ";" + contato.getEmail();
-			}
-			Email.envia("softplacemoveisbh@gmail.com", 
+			String remetente = prms.getRemetente();
+			String usuario = prms.getUsuario();
+			String senha = prms.getSenha();
+			String destinatarios = "";
+			for (String destinatario : prms.getDestinatarios()) {
+				if (!destinatarios.equals("")) {
+					destinatarios += ";";
+				}
+				destinatarios += destinatario;
+			}			
+			String assunto = prms.getAssunto().replace("$DATA$", df.format(new Date())).replace("$CLIENTE$", nomeCliente);
+			String texto = prms.getTexto().replace("$DATA$", df.format(new Date())).replace("$CLIENTE$", nomeCliente);
+			
+			Email.envia(remetente, 
 					destinatarios, 
-					"softplacemoveisbh", "soft101010", 
-					subject, 
-					"Esse email foi enviado automaticamente pelo SoftApp da SOFTPLACE.\nEm anexo, relatório de encerramento do agendamento "
-							+ df.format(new Date()) + nomeCliente, 
+					usuario, senha, 
+					assunto,
+					texto,
 					pdf);
 			
 		} catch (Exception e) {
