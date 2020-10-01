@@ -33,13 +33,16 @@ public class AgendaDao {
 		
 		String sql = String.format("select a.COD_USUARIO, a.DAT_AGENDAMENTO, a.DAT_PREVISAO, a.COD_NATUREZA, a.COD_PARCEIRO, a.DES_PENDENCIA, "
 				+ "a.DES_ENCERRAMENTO, a.DES_NOME, a.DES_DOCUMENTO, a.DES_EMAIL, a.DES_JSON, "
-				+ "a.COD_CONTATO, c.DES_PAPEL, c.NRO_FONE1, c.NRO_FONE2, c.NRO_CELULAR, p.DES_LOGRADOURO, p.NRO_ENDERECO, "
-				+ "p.DES_COMPLEMENTO, p.NOM_BAIRRO, p.NOM_CIDADE "
+				+ "a.COD_CONTATO, c.DES_PAPEL, c.NRO_FONE1, c.NRO_FONE2, c.NRO_CELULAR, "
+				+ "p.DES_LOGRADOURO, p.NRO_ENDERECO, p.DES_COMPLEMENTO, p.NOM_BAIRRO, p.NOM_CIDADE "
+				+ "p.DES_LOGRADOURO_ENTREGA as RUA_ENT, p.NRO_ENDERECO_ENTREGA as NRO_ENT, "
+				+ "p.DES_COMPLEMENTO_ENTREGA as COMPL_ENT, p.NOM_BAIRRO_ENTREGA as BAIRRO_ENT, "
+				+ "p.NOM_CIDADE_ENTREGA as CIDADE_ENT "
 				+ "from AGENDA a "
 				+ "left outer join PARCEIROS p on p.COD_PARCEIRO = a.COD_PARCEIRO "
 				+ "left outer join CONTATOS c on c.COD_PARCEIRO = a.COD_PARCEIRO and c.COD_CONTATO = a.COD_CONTATO "
 				+ "where a.COD_RESPONSAVEL='%s' "
-				+ "and a.DAT_PREVISAO between ? and ? and a.DAT_SOLUCAO is null order by a.DAT_PREVISAO",
+				+ "and a.DAT_PREVISAO between ? and ? order by a.DAT_PREVISAO",
 				responsavel);
 
 		int ano = Integer.parseInt(data.substring(0, 4));
@@ -71,11 +74,25 @@ public class AgendaDao {
 			String fone1 = cursor.getString("NRO_FONE1");
 			String fone2 = cursor.getString("NRO_FONE2");
 			String celular = cursor.getString("NRO_CELULAR");
-			String rua = cursor.getString("DES_LOGRADOURO");
-			String nro = cursor.getString("NRO_ENDERECO");
-			String complemento = cursor.getString("DES_COMPLEMENTO");
-			String bairro = cursor.getString("NOM_BAIRRO");
-			String cidade = cursor.getString("NOM_CIDADE");
+			
+			String rua = cursor.getString("RUA_ENT");
+			String nro = null;
+			String complemento = null;
+			String bairro = null;
+			String cidade = null;			
+			if (cursor.wasNull() || (rua == null) || (rua.isBlank())) {
+				rua = cursor.getString("DES_LOGRADOURO");
+				nro = cursor.getString("NRO_ENDERECO");
+				complemento = cursor.getString("DES_COMPLEMENTO");
+				bairro = cursor.getString("NOM_BAIRRO");
+				cidade = cursor.getString("NOM_CIDADE");				
+			} else {
+				nro = cursor.getString("NRO_ENT");
+				complemento = cursor.getString("COMPL_ENT");
+				bairro = cursor.getString("BAIRRO_ENT");
+				cidade = cursor.getString("CIDADE_ENT");
+			}
+			
 			String encerramento = cursor.getString("DES_ENCERRAMENTO");
 			String nome = cursor.getString("DES_NOME");
 			String documento = cursor.getString("DES_DOCUMENTO");
@@ -232,7 +249,7 @@ public class AgendaDao {
 		String sql = String.format("select a.DAT_PREVISAO "
 				+ "from AGENDA a "
 				+ "where a.COD_RESPONSAVEL='%s' "
-				+ "and a.DAT_PREVISAO between ? and ? and a.DAT_SOLUCAO is null order by a.DAT_PREVISAO",
+				+ "and a.DAT_PREVISAO between ? and ? order by a.DAT_PREVISAO",
 				usuario);
 		
 		int ano = Integer.parseInt(data.substring(0, 4));

@@ -42,7 +42,7 @@ public class SoftService {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String version() {
-		return "soft v2.8.0(16/09/2020)";
+		return "soft v2.9.0(01/10/2020)";
 	}
 
 	@GET
@@ -235,4 +235,5 @@ public class SoftService {
 // 15/09/2020 - 2.7.0 - migração para o git
 //              copiar jaxb(api,core,impl) para o lib(removido do java 11)
 // 16/09/2020 - 2.8.0 - parâmetros para email
+// 01/10/2020 - 2.9.0 - usar endereço de entrega e mostrar agendamentos solucionados
 
