@@ -58,6 +58,16 @@ public class AnexoDao {
 							descricao.toLowerCase().trim().endsWith(".pdf") ? "pdf" : "jpg");
 					System.out.println(arq);
 					File pdf = new File(arq);
+					
+					if (!pdf.exists()) {
+						arq = String.format("/Program Files (x86)/Apache Software Foundation/Tomcat 9.0/webapps/ROOT/soft/%s%d%s.%s",
+							fornecedor, orcamento, codigo.replace(" ", ""),
+							descricao.toLowerCase().trim().endsWith(".pdf") ? "pdf" : "jpg");
+						System.out.println(arq);
+						pdf = new File(arq);
+						
+					}
+					
 					InputStream bs = cursor.getBlob("DES_CONTEUDO").getBinaryStream();
 					OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(pdf), "ISO-8859-1");
 					int ch;  

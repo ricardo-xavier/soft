@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import xavier.ricardo.softapp.R;
 import xavier.ricardo.softapp.tasks.AnexoTask;
+import xavier.ricardo.softapp.tasks.WebService;
 
 public class AnexoActivity extends Activity {
 	
@@ -40,7 +41,8 @@ public class AnexoActivity extends Activity {
 
 				boolean jpg = anexo.getDescricao().contains(".jpg");
 					
-				String arq = String.format("http://ricardoxavier.no-ip.org/soft/%s%d%s.%s",
+				String arq = String.format("http://%s/soft/%s%d%s.%s",
+						WebService.getServidor(),
 						compromisso.getCodFornecedor(), compromisso.getCodOrcamento(),
 						codigo.replace(" ", ""),
 						jpg ? "jpg" : "pdf");
