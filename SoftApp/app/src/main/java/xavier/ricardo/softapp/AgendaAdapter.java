@@ -140,6 +140,12 @@ public class AgendaAdapter extends BaseAdapter {
 			btAnexos.setVisibility(View.VISIBLE);
 			btAnexos.setText(String.format("Anexos(%d)", 
 					compromisso.getAnexos().size()));
+			String tag = String.format("%s %s %d-%d",
+					compromisso.getCodFornecedor(),
+					compromisso.getDatOrcamento(),
+					compromisso.getCodOrcamento(),
+					compromisso.getNroPedido());
+			btAnexos.setTag(tag);
 		} else {
 			btAnexos.setVisibility(View.INVISIBLE);			
 		}

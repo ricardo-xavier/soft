@@ -34,7 +34,7 @@ public class AgendaDao {
 		String sql = String.format("select a.COD_USUARIO, a.DAT_AGENDAMENTO, a.DAT_PREVISAO, a.COD_NATUREZA, a.COD_PARCEIRO, a.DES_PENDENCIA, "
 				+ "a.DES_ENCERRAMENTO, a.DES_NOME, a.DES_DOCUMENTO, a.DES_EMAIL, a.DES_JSON, "
 				+ "a.COD_CONTATO, c.DES_PAPEL, c.NRO_FONE1, c.NRO_FONE2, c.NRO_CELULAR, "
-				+ "p.DES_LOGRADOURO, p.NRO_ENDERECO, p.DES_COMPLEMENTO, p.NOM_BAIRRO, p.NOM_CIDADE "
+				+ "p.DES_LOGRADOURO, p.NRO_ENDERECO, p.DES_COMPLEMENTO, p.NOM_BAIRRO, p.NOM_CIDADE, "
 				+ "p.DES_LOGRADOURO_ENTREGA as RUA_ENT, p.NRO_ENDERECO_ENTREGA as NRO_ENT, "
 				+ "p.DES_COMPLEMENTO_ENTREGA as COMPL_ENT, p.NOM_BAIRRO_ENTREGA as BAIRRO_ENT, "
 				+ "p.NOM_CIDADE_ENTREGA as CIDADE_ENT "
@@ -80,7 +80,7 @@ public class AgendaDao {
 			String complemento = null;
 			String bairro = null;
 			String cidade = null;			
-			if (cursor.wasNull() || (rua == null) || (rua.isBlank())) {
+			if (cursor.wasNull() || (rua == null) || (rua.trim().isEmpty())) {
 				rua = cursor.getString("DES_LOGRADOURO");
 				nro = cursor.getString("NRO_ENDERECO");
 				complemento = cursor.getString("DES_COMPLEMENTO");

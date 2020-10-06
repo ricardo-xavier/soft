@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -216,10 +217,10 @@ public class MainActivity extends Activity {
 
     public void anexos(View v) {
 
-        Button btn = (Button) findViewById(R.id.btDetalhes);
         try {
             Intent intent = new Intent(this, AnexoActivity.class);
-            String[] partes = btn.getText().toString().split(" ");
+            String tag = (String) v.getTag();
+            String[] partes = tag.split(" ");
             intent.putExtra("fornecedor", partes[0]);
             intent.putExtra("data", partes[1]);
             intent.putExtra("orcamento", partes[2].split("-")[0]);
