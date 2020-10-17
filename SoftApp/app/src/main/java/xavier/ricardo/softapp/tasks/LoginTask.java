@@ -54,8 +54,6 @@ public class LoginTask extends AsyncTask<String, Void, String> {
 	@Override
 	protected String doInBackground(String... params) {
 
-		WebService.defineServidor();
-		
 		try {
 			
 			String url = String.format("http://%s/%s/softws/login/%s/%s/%s",
