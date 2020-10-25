@@ -88,7 +88,12 @@ public class LoginActivity extends Activity {
 	}
 	
 	public void resultadoLogin(String mensagem) {
-		
+
+		if (mensagem == null) {
+			Toast.makeText(this, "Erro na comunicação", Toast.LENGTH_LONG).show();
+			return;
+		}
+
 		if (!mensagem.startsWith("ok")) {
 			Toast.makeText(this, mensagem, Toast.LENGTH_LONG).show();
 			return;
