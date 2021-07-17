@@ -384,7 +384,7 @@ where p.nro_nf_fornec = 210361
 		
 		List<Compromisso> compromissos = new ArrayList<Compromisso>();
 		
-		String sql = String.format("select a.COD_USUARIO, a.DAT_AGENDAMENTO, a.DAT_PREVISAO "
+		String sql = String.format("select a.COD_RESPONSAVEL, a.DAT_AGENDAMENTO, a.DAT_PREVISAO "
 				+ "from PEDIDOS p "
 				+ "inner join PEDIDOS_AGENDA pa "
 				+ "   on pa.cod_fornecedor = p.cod_fornecedor "
@@ -404,7 +404,7 @@ where p.nro_nf_fornec = 210361
 		while (cursor.next()) {
 			
 			Compromisso compromisso = new Compromisso();
-			String usuario = cursor.getString("COD_USUARIO");
+			String usuario = cursor.getString("COD_RESPONSAVEL");
 			Date datPrevisao = new Date(cursor.getDate("DAT_PREVISAO").getTime());
 			compromisso.setUsuario(usuario);
 			compromisso.setData(df.format(datPrevisao));

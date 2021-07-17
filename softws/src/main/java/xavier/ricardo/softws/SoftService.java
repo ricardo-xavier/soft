@@ -22,10 +22,7 @@ import javax.ws.rs.core.MediaType;
 
 import com.google.gson.Gson;
 
-import xavier.ricardo.softws.dao.AgendaDao;
-import xavier.ricardo.softws.dao.AnexoDao;
-import xavier.ricardo.softws.dao.PedidoDao;
-import xavier.ricardo.softws.dao.UsuarioDao;
+import xavier.ricardo.softws.dao.*;
 import xavier.ricardo.softws.tipos.Agenda;
 import xavier.ricardo.softws.tipos.AgendaMes;
 import xavier.ricardo.softws.tipos.Anexo;
@@ -34,6 +31,7 @@ import xavier.ricardo.softws.tipos.Encerramento;
 import xavier.ricardo.softws.tipos.Imagem;
 import xavier.ricardo.softws.tipos.Pdf;
 import xavier.ricardo.softws.tipos.Pedido;
+import xavier.ricardo.softws.tipos.Produto;
 import xavier.ricardo.softws.tipos.Usuarios;
 import xavier.ricardo.softws.utils.PdfEncerramento;
 
@@ -42,7 +40,7 @@ public class SoftService {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String version() {
-		return "soft v2.9.0(01/10/2020)";
+		return "soft v2.11.0(17/07/2021)";
 	}
 
 	@GET
@@ -229,6 +227,59 @@ public class SoftService {
 		}
 	}
 	
+	@GET
+	@Path("/produto/{fornecedor}/{codigo}/{subcodigo}/{tabela}/{caracteristica}")
+	@Produces(MediaType.TEXT_HTML)
+	public String getProduto(@PathParam("fornecedor") String fornecedor, 
+							@PathParam("codigo") String codigo,
+							@PathParam("subcodigo") String subCodigo,
+							 @PathParam("tabela") String tabela,
+							 @PathParam("caracteristica") String caracteristica) {
+		
+		System.out.println(new Date() + " softws produto: " + fornecedor
+				+ " " + codigo
+				+ " " + subCodigo
+				+ " " + tabela
+				+ " " + caracteristica);
+
+		try {
+			Produto produto = ProdutoDao.getProduto(fornecedor, codigo, subCodigo, tabela, caracteristica);
+			String html = "<html><meta \"charset=utf-8\"/><body>" + produto.toHtml() + "</body></html>";
+			System.out.println(html);
+			return html;
+
+		} catch (NamingException | SQLException e) {
+			e.printStackTrace();
+			return "<html><meta \"charset=utf-8\"/><body>" + e.getMessage() + "</body></html>";
+		}
+	}
+
+	@GET
+	@Path("/item/{fornecedor}/{data}/{orcamento}/{area}/{item}")
+	@Produces(MediaType.TEXT_HTML)
+	public String getItem(@PathParam("fornecedor") String fornecedor,
+						  @PathParam("data") String data,
+						  @PathParam("orcamento") String orcamento,
+						  @PathParam("area") String area,
+						  @PathParam("item") String item) {
+
+		System.out.println(new Date() + " softws produto: " + fornecedor
+				+ " " + data
+				+ " " + orcamento
+				+ " " + area
+				+ " " + item);
+
+		try {
+			Produto produto = OrcamentoDao.getItem(fornecedor, data, orcamento, area, item);
+			String html = "<html><meta \"charset=utf-8\"/><body>" + produto.toHtml() + "</body></html>";
+			System.out.println(html);
+			return html;
+
+		} catch (NamingException | SQLException e) {
+			e.printStackTrace();
+			return "<html><meta \"charset=utf-8\"/><body>" + e.getMessage() + "</body></html>";
+		}
+	}
 }
 
 // 01/05/2020 - 2.6.2 - só estava mostrando o primeiro item do pedido
@@ -236,4 +287,5 @@ public class SoftService {
 //              copiar jaxb(api,core,impl) para o lib(removido do java 11)
 // 16/09/2020 - 2.8.0 - parâmetros para email
 // 01/10/2020 - 2.9.0 - usar endereço de entrega e mostrar agendamentos solucionados
+// 17/07/2021 - 2.11.0 - /item
 

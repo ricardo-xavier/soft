@@ -5,7 +5,7 @@
 
 	<groupId>xavier.ricardo</groupId>
 	<artifactId>softws</artifactId>
-	<version>2.9.0</version>
+	<version>2.11.0</version>
 	<packaging>war</packaging>
 
 	<name>softws</name>
@@ -156,6 +156,20 @@
 			<groupId>com.sun.mail</groupId>
 			<artifactId>javax.mail</artifactId>
 			<version>1.6.2</version>
+		</dependency>
+
+		<!-- API, java.xml.bind module -->
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+
+		<!-- Runtime, com.sun.xml.bind module -->
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.3.2</version>
 		</dependency>
 
 	</dependencies>
