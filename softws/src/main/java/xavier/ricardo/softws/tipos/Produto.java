@@ -35,14 +35,28 @@ public class Produto {
 	}
 	
 	public String toHtml() {
-		return "<h4>" + fornecedor + "</h4>"
-				+  "<h4>" + tabela + "</h4>"
-				+  "<h4>" + caracteristica + "</h4>"
-				+  "<h4>" + codigo + " - " + subCodigo + "</h4>"
-				+  "<h4>" + descricao + "</h4>"
-				+  "<h4>" + String.format("R$ %.2f", preco) + "</h4>"
+		return "<h1>" + fornecedor + "</h1>"
+				+  "<h1>" + tabela + "</h1>"
+				+  "<h1>" + caracteristica + "</h1>"
+				+  "<h1>" + codigo + " - " + subCodigo + "</h1>"
+				+  "<h1>" + descricao + "</h1>"
+				+  "<h1>" + String.format("R$ %.2f", preco) + "</h1>"
 				+  "<img src=\"/foto/" + codigo.trim() + subCodigo.trim() + ".jpg\" alt=\"foto\">";
 
+	}
+	
+	private String trataAcentuacao(String s) {
+		return s.replaceAll("Á", "&Aacute;")
+				.replaceAll("É", "&Eacute;")
+				.replaceAll("Í", "&Iacute;")
+				.replaceAll("Ó", "&Oacute;")
+				.replaceAll("Ú", "&Uacute;")
+				.replaceAll("Â", "&Atilde;")
+				.replaceAll("Õ", "&Otilde;")
+				.replaceAll("Â", "&Acirc;")
+				.replaceAll("Ê", "&Ecirc;")
+				.replaceAll("Ô", "&Ocirc")
+				.replaceAll("Ç", "&Ccedil;");
 	}
 
 	public String getTabela() {
