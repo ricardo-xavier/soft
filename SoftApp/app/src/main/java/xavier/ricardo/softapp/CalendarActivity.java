@@ -19,19 +19,19 @@ import android.widget.NumberPicker;
 import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.Spinner;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
-import xavier.ricardo.softapp.R;
 import xavier.ricardo.softapp.tasks.AgendaMesTask;
 import xavier.ricardo.softapp.tasks.UsuariosTask;
 
 @SuppressWarnings("deprecation")
 public class CalendarActivity extends Activity {
+
+	private static final int MAIN = 1;
+	private static final int NF = 2;
 	
 	private static final int MARGEM = 5;
 	private int mes;
@@ -203,7 +203,7 @@ public class CalendarActivity extends Activity {
 					intent.putExtra("usuario", responsavel);
 					SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 					intent.putExtra("data", df.format(cal.getTime()));
-					startActivity(intent);					
+					startActivityForResult(intent, MAIN);
 				}
 			});
 		}
@@ -268,12 +268,18 @@ public class CalendarActivity extends Activity {
 
 	public void nf(View v) {
 		Intent intent = new Intent(this, NFActivity.class);
-		startActivityForResult(intent, 1);
+		startActivityForResult(intent, NF);
 	}
-
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+		if (requestCode == MAIN) {
+			Calendar cal = Calendar.getInstance();
+			cal.set(ano, mes, 1);
+			new AgendaMesTask(this, responsavel, cal).execute();
+			return;
+		}
 
 		CalendarActivity contexto = this;
 		if (resultCode == RESULT_OK) {

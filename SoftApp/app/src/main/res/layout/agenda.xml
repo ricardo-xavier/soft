@@ -122,6 +122,13 @@
         android:gravity="center_horizontal" >
 
         <Button
+            android:id="@+id/btnReagendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="reagendar"
+            android:text="@string/reagendar" />
+
+        <Button
             android:id="@+id/btEncerrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

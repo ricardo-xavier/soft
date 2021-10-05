@@ -38,11 +38,13 @@ import java.util.Locale;
 
 import xavier.ricardo.softapp.R;
 import xavier.ricardo.softapp.tasks.AgendaTask;
+import xavier.ricardo.softapp.tasks.EncerramentoTask;
 import xavier.ricardo.softapp.tasks.FotoTask;
 
 public class MainActivity extends Activity {
 
     static final int REQUEST_IMAGE_CAPTURE = 2;
+    static final int ALTERAR_DATA = 3;
     private String imageFilePath;
     private String timeStamp;
     private TextView tvDiaSemana;
@@ -271,6 +273,22 @@ public class MainActivity extends Activity {
         }
     }
 
+    public void reagendar(View v) {
+
+        Button encerrar = findViewById(R.id.btEncerrar);
+        String chave = (String) encerrar.getTag();
+        String previsao = String.format("%04d-%02d-%02d", dpData.getYear(), dpData.getMonth()+1, dpData.getDayOfMonth());
+        String[] partes = chave.split(";");
+        String usuario = partes[0].trim();
+        String data = partes[1].trim();
+
+        Intent intent = new Intent(this, ReagendarActivity.class);
+        intent.putExtra("usuario", usuario);
+        intent.putExtra("data", data);
+        intent.putExtra("previsao", previsao);
+        startActivityForResult(intent, ALTERAR_DATA);
+    }
+
     private File createImageFile() throws IOException {
         timeStamp =
                 new SimpleDateFormat("yyyyMMdd_HHmmss",
@@ -301,6 +319,12 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == ALTERAR_DATA) {
+            finish();
+            return;
+        }
+
         if (resultCode == RESULT_OK) {
 
             if (requestCode == REQUEST_IMAGE_CAPTURE) {

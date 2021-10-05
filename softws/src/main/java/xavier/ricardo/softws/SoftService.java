@@ -12,12 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.naming.NamingException;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 import com.google.gson.Gson;
@@ -40,7 +35,7 @@ public class SoftService {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String version() {
-		return "soft v2.11.0(17/07/2021)";
+		return "soft v2.13.0(25/09/2021)";
 	}
 
 	@GET
@@ -147,7 +142,22 @@ public class SoftService {
 		}		
 		return "ok";
 	}
-	
+
+	@PUT
+	@Path("/reagendar/{usuario}/{data}/{previsao}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public String reagendar(@PathParam("usuario") String usuario, @PathParam("data") String data, @PathParam("previsao") String previsao) {
+
+		System.out.println(new Date() + " softws agenda reagendar " + usuario + " " + data + " " + previsao);
+		try {
+			AgendaDao.reagenda(usuario, data, previsao);
+		} catch (SQLException | NamingException e) {
+			e.printStackTrace();
+			return e.getMessage();
+		}
+		return "ok";
+	}
+
 	@POST
 	@Path("/encerra")
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -288,4 +298,5 @@ public class SoftService {
 // 16/09/2020 - 2.8.0 - parâmetros para email
 // 01/10/2020 - 2.9.0 - usar endereço de entrega e mostrar agendamentos solucionados
 // 17/07/2021 - 2.11.0 - /item
+// 04/09/2021 - 2.12.0 - reagendamento
 

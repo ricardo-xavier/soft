@@ -11,6 +11,9 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
 
 import com.google.gson.Gson;
 
@@ -71,7 +74,10 @@ public class FotoTask extends AsyncTask<String, Void, String> {
             String url = String.format("http://%s/%s/softws/foto",
                     WebService.getServidor(), WebService.getServico());
 
-            HttpClient httpClient = new DefaultHttpClient();
+            int timeoutSocket = 60000;
+            HttpParams httpParameters = new BasicHttpParams();
+            HttpConnectionParams.setSoTimeout(httpParameters, timeoutSocket);
+            HttpClient httpClient = new DefaultHttpClient(httpParameters);
 
             HttpPost httpPost = new HttpPost(url);
 

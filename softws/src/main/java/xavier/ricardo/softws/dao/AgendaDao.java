@@ -1,10 +1,7 @@
 package xavier.ricardo.softws.dao;
 
 import java.io.File;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -25,7 +22,23 @@ import xavier.ricardo.softws.tipos.Encerramento;
 
 public class AgendaDao {
 
-	//http://ricardoxavier.no-ip.org/soft-ws3/softws/lista/fabiana.ferrari/2019-10-16
+    public static void reagenda(String usuario, String data, String previsao) throws SQLException, NamingException {
+
+		String sql = String.format("update AGENDA "
+						+ "set DAT_PREVISAO='%s' "
+						+ "where COD_USUARIO='%s' "
+						+ "and DAT_AGENDAMENTO='%s'",
+				previsao, usuario, data);
+		System.out.println(sql);
+
+		Connection bd = BancoDados.conecta();
+		Statement cmd = bd.createStatement();
+		cmd.executeUpdate(sql);
+		cmd.close();
+		bd.close();
+    }
+
+    //http://ricardoxavier.no-ip.org/soft-ws3/softws/lista/fabiana.ferrari/2019-10-16
 	@SuppressWarnings("deprecation")
 	public Agenda lista(String responsavel, String data) throws NamingException, SQLException {
 		

@@ -88,7 +88,10 @@
             android:name=".AssinaturaActivity"
             android:label="@string/title_activity_assinatura"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".ReagendarActivity"
+            android:label="@string/title_activity_reagendar"
+            android:screenOrientation="portrait" />
         <receiver
             android:name=".NotificationReceiver"
             android:enabled="true" />
