@@ -1,0 +1,5 @@
+C:\Sistema\Fontes SOFT\softplace\classes\obj\Debug\ResolveAssemblyReference.cache
+C:\Sistema\Fontes SOFT\softplace\classes\obj\Debug\classes.fEntradaItem.resources
+C:\Sistema\Fontes SOFT\softplace\classes\obj\Debug\classes.csproj.GenerateResource.Cache
+C:\Sistema\Fontes SOFT\softplace\classes\obj\Debug\classes.dll
+C:\Sistema\Fontes SOFT\softplace\classes\obj\Debug\classes.pdb

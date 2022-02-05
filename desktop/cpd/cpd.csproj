@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{4E8B4DE3-D5A7-4967-88AF-F4D86355B98C}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>cpd</RootNamespace>
+    <AssemblyName>cpd</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>c:\soft</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="classes">
+      <HintPath>..\..\..\..\soft\classes.dll</HintPath>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient">
+      <HintPath>..\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="templates">
+      <HintPath>..\..\..\soft\templates.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="fCadFiliais.cs" />
+    <Compile Include="fCadFiliais.Designer.cs">
+      <DependentUpon>fCadFiliais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadMensagens.cs" />
+    <Compile Include="fCadMensagens.Designer.cs">
+      <DependentUpon>fCadMensagens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadProgramas.cs" />
+    <Compile Include="fCadProgramas.Designer.cs">
+      <DependentUpon>fCadProgramas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadSistemas.cs" />
+    <Compile Include="fCadSistemas.Designer.cs">
+      <DependentUpon>fCadSistemas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadUsuarios.cs" />
+    <Compile Include="fCadUsuarios.Designer.cs">
+      <DependentUpon>fCadUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fControleAcesso.cs" />
+    <Compile Include="fControleAcesso.Designer.cs">
+      <DependentUpon>fControleAcesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSobre.cs" />
+    <Compile Include="fSobre.Designer.cs">
+      <DependentUpon>fSobre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensagens.cs" />
+    <Compile Include="Mensagens.Designer.cs">
+      <DependentUpon>Mensagens.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fCadFiliais.resx">
+      <DependentUpon>fCadFiliais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadMensagens.resx">
+      <DependentUpon>fCadMensagens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadProgramas.resx">
+      <DependentUpon>fCadProgramas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadSistemas.resx">
+      <DependentUpon>fCadSistemas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadUsuarios.resx">
+      <DependentUpon>fCadUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fControleAcesso.resx">
+      <DependentUpon>fControleAcesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx" />
+    <EmbeddedResource Include="Mensagens.resx">
+      <DependentUpon>Mensagens.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

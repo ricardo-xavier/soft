@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{F90ACEB5-DE27-410C-9132-BCB9788A9464}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>templates</RootNamespace>
+    <AssemblyName>templates</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>c:\soft</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="classes">
+      <HintPath>..\..\..\..\soft\classes.dll</HintPath>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient">
+      <HintPath>..\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="fLogin.cs" />
+    <Compile Include="fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tCadastroSimples.cs" />
+    <Compile Include="tCadastroSimples.Designer.cs">
+      <DependentUpon>tCadastroSimples.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tConsulta.cs" />
+    <Compile Include="tConsulta.Designer.cs">
+      <DependentUpon>tConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tMenu.cs" />
+    <Compile Include="tMenu.Designer.cs">
+      <DependentUpon>tMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tSobre.cs" />
+    <Compile Include="tSobre.Designer.cs">
+      <DependentUpon>tSobre.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tCadastroSimples.resx">
+      <DependentUpon>tCadastroSimples.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tConsulta.resx">
+      <DependentUpon>tConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tMenu.resx">
+      <DependentUpon>tMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tSobre.resx">
+      <DependentUpon>tSobre.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

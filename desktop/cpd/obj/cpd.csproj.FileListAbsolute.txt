@@ -1,0 +1,12 @@
+C:\Sistema\Fontes SOFT\softplace\cpd\obj\Debug\ResolveAssemblyReference.cache
+C:\Sistema\Fontes SOFT\softplace\cpd\obj\Debug\cpd.frmCadFiliais.resources
+C:\Sistema\Fontes SOFT\softplace\cpd\obj\Debug\cpd.fCadMensagens.resources
+C:\Sistema\Fontes SOFT\softplace\cpd\obj\Debug\cpd.frmCadProgramas.resources
+C:\Sistema\Fontes SOFT\softplace\cpd\obj\Debug\cpd.frmCadSistemas.resources
+C:\Sistema\Fontes SOFT\softplace\cpd\obj\Debug\cpd.frmCadUsuarios.resources
+C:\Sistema\Fontes SOFT\softplace\cpd\obj\Debug\cpd.frmControleAcesso.resources
+C:\Sistema\Fontes SOFT\softplace\cpd\obj\Debug\cpd.MainForm.resources
+C:\Sistema\Fontes SOFT\softplace\cpd\obj\Debug\cpd.Mensagens.resources
+C:\Sistema\Fontes SOFT\softplace\cpd\obj\Debug\cpd.csproj.GenerateResource.Cache
+C:\Sistema\Fontes SOFT\softplace\cpd\obj\Debug\cpd.exe
+C:\Sistema\Fontes SOFT\softplace\cpd\obj\Debug\cpd.pdb

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{7095E028-C3DB-4F6C-B553-3D5F55FA827E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>agenda</RootNamespace>
+    <AssemblyName>agenda</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>c:\soft</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="classes">
+      <HintPath>..\..\..\..\soft\classes.dll</HintPath>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient">
+      <HintPath>..\..\..\soft\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="templates">
+      <HintPath>..\..\..\soft\templates.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="fAgenda.cs" />
+    <Compile Include="fAgenda.Designer.cs">
+      <DependentUpon>fAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAnexos.cs" />
+    <Compile Include="fAnexos.Designer.cs">
+      <DependentUpon>fAnexos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fParametrosImpressao.cs" />
+    <Compile Include="fParametrosImpressao.Designer.cs">
+      <DependentUpon>fParametrosImpressao.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fAgenda.resx">
+      <DependentUpon>fAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAgenda.resx" />
+    <EmbeddedResource Include="fAnexos.resx">
+      <DependentUpon>fAnexos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fParametrosImpressao.resx">
+      <DependentUpon>fParametrosImpressao.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\basico\basico.csproj">
+      <Project>{D149FEAA-DE43-4F55-9A2F-434A8E9D8124}</Project>
+      <Name>basico</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

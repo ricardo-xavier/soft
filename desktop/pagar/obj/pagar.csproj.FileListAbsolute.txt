@@ -1,0 +1,17 @@
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\ResolveAssemblyReference.cache
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.fCadFormas.resources
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.fCadNaturezas.resources
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.fCadPendencias.resources
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.fCadTitulo.resources
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.fGraficoFixoVariavel.resources
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.fGraficoNatureza.resources
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.fGraficoTendencia.resources
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.fLote.resources
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.fPagamento.resources
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.fSelecaoQuebra.resources
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.fSobre.resources
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.MainForm.resources
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.csproj.GenerateResource.Cache
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.exe
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\pagar.pdb
+C:\Sistema\Fontes SOFT\softplace\pagar\obj\Debug\templates.MenuPagar.resources

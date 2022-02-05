@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{B9F1B4C0-BF72-4904-92F5-0AD19AB8246E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>orcamento</RootNamespace>
+    <AssemblyName>orcamento</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>c:\soft</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <StartAction>Project</StartAction>
+    <StartArguments>flavia.menezes  "ALTA Probabilidade"</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="classes">
+      <HintPath>..\..\..\..\soft\classes.dll</HintPath>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient">
+      <HintPath>..\..\..\soft\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="templates">
+      <HintPath>..\..\..\soft\templates.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="fAnexosOrcamento.cs" />
+    <Compile Include="fAnexosOrcamento.Designer.cs">
+      <DependentUpon>fAnexosOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadItens.cs" />
+    <Compile Include="fCadItens.Designer.cs">
+      <DependentUpon>fCadItens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadOrcamento.cs" />
+    <Compile Include="fCadOrcamento.Designer.cs">
+      <DependentUpon>fCadOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fConsultaPreco.cs" />
+    <Compile Include="fConsultaPreco.Designer.cs">
+      <DependentUpon>fConsultaPreco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fFiltroOrcamento.cs" />
+    <Compile Include="fFiltroOrcamento.Designer.cs">
+      <DependentUpon>fFiltroOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fGeraPedido.cs" />
+    <Compile Include="fGeraPedido.Designer.cs">
+      <DependentUpon>fGeraPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fParametrosImpressao.cs" />
+    <Compile Include="fParametrosImpressao.Designer.cs">
+      <DependentUpon>fParametrosImpressao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPesquisaRapida.cs" />
+    <Compile Include="fPesquisaRapida.Designer.cs">
+      <DependentUpon>fPesquisaRapida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fAnexosOrcamento.resx">
+      <DependentUpon>fAnexosOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadItens.resx">
+      <DependentUpon>fCadItens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadOrcamento.resx">
+      <DependentUpon>fCadOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fConsultaPreco.resx">
+      <DependentUpon>fConsultaPreco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fFiltroOrcamento.resx">
+      <DependentUpon>fFiltroOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fGeraPedido.resx">
+      <DependentUpon>fGeraPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fParametrosImpressao.resx">
+      <DependentUpon>fParametrosImpressao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPesquisaRapida.resx">
+      <DependentUpon>fPesquisaRapida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\basico\basico.csproj">
+      <Project>{D149FEAA-DE43-4F55-9A2F-434A8E9D8124}</Project>
+      <Name>basico</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
