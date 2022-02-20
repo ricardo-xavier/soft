@@ -167,6 +167,7 @@ namespace acao
 				edtOrigem.Text = acao.CodOrigem.Trim();
 				edtObservacao.Text = acao.TxtObservacao.Trim();
 				cbxSituacao.Text = acao.IdtSituacao;
+				edtConcorrentes.Text = acao.TxtConcorrentes.Trim();
 				foreach (string situacao in cbxSituacao.Items)
 				{
 					if (situacao.StartsWith(acao.IdtSituacao.Trim() + " "))

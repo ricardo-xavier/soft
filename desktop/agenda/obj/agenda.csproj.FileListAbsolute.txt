@@ -6,3 +6,13 @@ C:\Sistema\Fontes SOFT\softplace\agenda\obj\Debug\agenda.fParametrosImpressao.re
 C:\Sistema\Fontes SOFT\softplace\agenda\obj\Debug\agenda.csproj.GenerateResource.Cache
 C:\Sistema\Fontes SOFT\softplace\agenda\obj\Debug\agenda.exe
 C:\Sistema\Fontes SOFT\softplace\agenda\obj\Debug\agenda.pdb
+c:\soft\agenda.exe
+c:\soft\agenda.pdb
+C:\Sistema\Fontes SOFT\git\desktop\agenda\obj\Debug\ResolveAssemblyReference.cache
+C:\Sistema\Fontes SOFT\git\desktop\agenda\obj\Debug\agenda.frmAgenda.resources
+C:\Sistema\Fontes SOFT\git\desktop\agenda\obj\Debug\agenda.fAgenda.resources
+C:\Sistema\Fontes SOFT\git\desktop\agenda\obj\Debug\agenda.frmAnexos.resources
+C:\Sistema\Fontes SOFT\git\desktop\agenda\obj\Debug\agenda.fParametrosImpressao.resources
+C:\Sistema\Fontes SOFT\git\desktop\agenda\obj\Debug\agenda.csproj.GenerateResource.Cache
+C:\Sistema\Fontes SOFT\git\desktop\agenda\obj\Debug\agenda.exe
+C:\Sistema\Fontes SOFT\git\desktop\agenda\obj\Debug\agenda.pdb
