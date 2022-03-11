@@ -53,7 +53,11 @@ namespace acao
 				? partesSituacao[0].Trim()
 				: cbxSituacao.Text.Trim();			
 			acao.TxtObservacao = edtObservacao.Text.Trim();
-			acao.TxtConcorrentes = edtConcorrentes.Text.Trim();
+			if (edtConcorrentes.Text != null) {
+				acao.TxtConcorrentes = edtConcorrentes.Text.Trim();
+			} else {
+				acao.TxtConcorrentes = "";
+			}
 			
 			if (acao.IdtSituacao.Equals(""))
 			{
@@ -167,7 +171,11 @@ namespace acao
 				edtOrigem.Text = acao.CodOrigem.Trim();
 				edtObservacao.Text = acao.TxtObservacao.Trim();
 				cbxSituacao.Text = acao.IdtSituacao;
-				edtConcorrentes.Text = acao.TxtConcorrentes.Trim();
+				if (acao.TxtConcorrentes != null) {
+					edtConcorrentes.Text = acao.TxtConcorrentes.Trim();
+				} else {
+					edtConcorrentes.Text = "";
+				}
 				foreach (string situacao in cbxSituacao.Items)
 				{
 					if (situacao.StartsWith(acao.IdtSituacao.Trim() + " "))

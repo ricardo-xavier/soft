@@ -154,7 +154,7 @@ namespace classes
 				{
 					fator = ipi;
 					valor += (valor * fator / (float)100);
-					tab.Rows.Add(new object[] {"IPI +" + ipi.ToString("#0") + "%", valor});
+					tab.Rows.Add(new object[] {"IPI +" + ipi.ToString("#0.##") + "%", valor});
 				}
 				else
 				if (formula.Substring(i, 4).CompareTo("+FRE") == 0)

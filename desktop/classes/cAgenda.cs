@@ -359,7 +359,7 @@ namespace classes
 						   bool encerrado, DateTime data_encerramento, 		                   
 		                   ref string msg)
 		{
-			AtualizaUltimoContatoAcao(usuario, data_agendamento, data_previsao, solucionado);
+			AtualizaUltimoContatoAcao(usuario, data_agendamento, data_previsao, solucionado, data_solucao);
 			string _natureza;			
 			if (natureza.Trim().CompareTo("") == 0)
 				_natureza= "null";
@@ -722,13 +722,14 @@ namespace classes
 		public static void AtualizaUltimoContatoAcao(string usuario, 
 		                                             DateTime dataAgendamento,
 		                                             DateTime dataPrevisao,
-		                                             bool solucionado) {
+		                                             bool solucionado,
+		                                             DateTime dataSolucao) {
 
 			// verifica se a data de previsão foi alterada	
 			// ou se a data de solução > data contato			
 			bool dataAlterada = true;
 			DateTime dataContato = dataPrevisao;
-			string sql = "select DAT_PREVISAO, DAT_SOLUCAO from AGENDA "
+			string sql = "select DAT_PREVISAO from AGENDA "
 			    + "where COD_USUARIO='" + usuario + "' "
 			    + "  and DAT_AGENDAMENTO='" + dataAgendamento.ToString("M/d/yyyy HH:mm:ss") + "'";			
 			FbCommand cmd =  new FbCommand(sql, Globais.bd);
@@ -738,12 +739,9 @@ namespace classes
 				if (dataPrevisaoAnterior == dataPrevisao) {
 					dataAlterada = false;
 				}
-				if (solucionado) {				
-					DateTime dataSolucao = cursor.GetDateTime(1);
-					if (dataSolucao > dataPrevisao) {
-						dataAlterada = true;
-						dataContato = dataSolucao;
-					}
+				if (solucionado && (dataSolucao > dataPrevisao)) {
+					dataAlterada = true;
+					dataContato = dataSolucao;
 				}
 			}			
 			cursor.Close();
