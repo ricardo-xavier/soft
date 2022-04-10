@@ -913,7 +913,7 @@ namespace agenda
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmAgenda";
-			this.Text = "Sistema SOFT - Agenda  - v2.4.0 (05/02/22)";
+			this.Text = "Sistema SOFT - Agenda  - v2.6.1 (05/04/22)";
 			this.Load += new System.EventHandler(this.FrmAgendaLoad);
 			this.Controls.SetChildIndex(this.imgClientes, 0);
 			this.Controls.SetChildIndex(this.btnDown, 0);

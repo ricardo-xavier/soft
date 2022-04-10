@@ -1132,7 +1132,7 @@ namespace pedido
 			this.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Sistema SOFT - Pedidos - v2.5.0 (15/05/21)";
+			this.Text = "Sistema SOFT - Pedidos - v2.6.0 (10/04/22)";
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			((System.ComponentModel.ISupportInitialize)(this.dgvCadastro)).EndInit();
 			this.gbxEntrega.ResumeLayout(false);

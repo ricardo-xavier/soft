@@ -7,14 +7,3 @@ C:\Sistema\Fontes SOFT\softplace\templates\obj\Debug\templates.tSobre.resources
 C:\Sistema\Fontes SOFT\softplace\templates\obj\Debug\templates.csproj.GenerateResource.Cache
 C:\Sistema\Fontes SOFT\softplace\templates\obj\Debug\templates.dll
 C:\Sistema\Fontes SOFT\softplace\templates\obj\Debug\templates.pdb
-c:\soft\templates.dll
-c:\soft\templates.pdb
-C:\Sistema\Fontes SOFT\git\desktop\templates\obj\Debug\ResolveAssemblyReference.cache
-C:\Sistema\Fontes SOFT\git\desktop\templates\obj\Debug\templates.frmLogin.resources
-C:\Sistema\Fontes SOFT\git\desktop\templates\obj\Debug\templates.tCadastroSimples.resources
-C:\Sistema\Fontes SOFT\git\desktop\templates\obj\Debug\templates.tConsulta.resources
-C:\Sistema\Fontes SOFT\git\desktop\templates\obj\Debug\templates.tMenu.resources
-C:\Sistema\Fontes SOFT\git\desktop\templates\obj\Debug\templates.tSobre.resources
-C:\Sistema\Fontes SOFT\git\desktop\templates\obj\Debug\templates.csproj.GenerateResource.Cache
-C:\Sistema\Fontes SOFT\git\desktop\templates\obj\Debug\templates.dll
-C:\Sistema\Fontes SOFT\git\desktop\templates\obj\Debug\templates.pdb

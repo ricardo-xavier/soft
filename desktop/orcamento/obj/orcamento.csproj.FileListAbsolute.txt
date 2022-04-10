@@ -11,18 +11,3 @@ C:\Sistema\Fontes SOFT\softplace\orcamento\obj\Debug\orcamento.MainForm.resource
 C:\Sistema\Fontes SOFT\softplace\orcamento\obj\Debug\orcamento.csproj.GenerateResource.Cache
 C:\Sistema\Fontes SOFT\softplace\orcamento\obj\Debug\orcamento.exe
 C:\Sistema\Fontes SOFT\softplace\orcamento\obj\Debug\orcamento.pdb
-c:\soft\orcamento.exe
-c:\soft\orcamento.pdb
-C:\Sistema\Fontes SOFT\git\desktop\orcamento\obj\Debug\ResolveAssemblyReference.cache
-C:\Sistema\Fontes SOFT\git\desktop\orcamento\obj\Debug\orcamento.frmAnexosOrcamento.resources
-C:\Sistema\Fontes SOFT\git\desktop\orcamento\obj\Debug\orcamento.frmCadItens.resources
-C:\Sistema\Fontes SOFT\git\desktop\orcamento\obj\Debug\orcamento.frmCadOrcamento.resources
-C:\Sistema\Fontes SOFT\git\desktop\orcamento\obj\Debug\orcamento.fConsultaPreco.resources
-C:\Sistema\Fontes SOFT\git\desktop\orcamento\obj\Debug\orcamento.frmFiltroOrcamento.resources
-C:\Sistema\Fontes SOFT\git\desktop\orcamento\obj\Debug\orcamento.fGeraPedido.resources
-C:\Sistema\Fontes SOFT\git\desktop\orcamento\obj\Debug\orcamento.fParametrosImpressao.resources
-C:\Sistema\Fontes SOFT\git\desktop\orcamento\obj\Debug\orcamento.fPesquisaRapida.resources
-C:\Sistema\Fontes SOFT\git\desktop\orcamento\obj\Debug\orcamento.MainForm.resources
-C:\Sistema\Fontes SOFT\git\desktop\orcamento\obj\Debug\orcamento.csproj.GenerateResource.Cache
-C:\Sistema\Fontes SOFT\git\desktop\orcamento\obj\Debug\orcamento.exe
-C:\Sistema\Fontes SOFT\git\desktop\orcamento\obj\Debug\orcamento.pdb

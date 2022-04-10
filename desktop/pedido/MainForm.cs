@@ -262,13 +262,20 @@ namespace pedido
 			if (dgvCadastro.Rows.Count == 0) return;
 			int i = dgvCadastro.CurrentRow.Index;
 			short codigo = Globais.StrToShort(dgvCadastro.Rows[i].Cells["CodPedido"].Value.ToString());
+			DateTime data = DateTime.Parse(dgvCadastro.Rows[i].Cells["Data"].Value.ToString());
+			DateTime hoje = DateTime.Now;
+			if (data.Date != hoje.Date) {
+				if (!Globais.bAdministrador) {
+					MessageBox.Show("Esse pedido só pode ser excluído pelo administrador");
+					return;
+				}
+			}
 			DialogResult r = MessageBox.Show(codigo.ToString(), "Confirma a exclusão?",
 			                                 MessageBoxButtons.YesNo, 
 			                                 MessageBoxIcon.Question);
 			if (r == DialogResult.No) return;	
 			
 			string fornecedor = dgvCadastro.Rows[i].Cells["Fornecedor Orçamento"].Value.ToString().Trim();
-			DateTime data = DateTime.Parse(dgvCadastro.Rows[i].Cells["Data"].Value.ToString());
 			short orcamento = CodOrcamento(dgvCadastro.Rows[i].Cells["Orçamento"].Value.ToString());
 		
 			cPedidos pedidos = new cPedidos();

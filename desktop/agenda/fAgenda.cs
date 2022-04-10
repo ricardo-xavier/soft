@@ -127,6 +127,9 @@ namespace agenda
 		
 		public void SetaEdicaoLocal(bool enabled)
 		{
+			if (seqAcao != 0) {
+				btnInclui.Enabled = false;
+			}
 			btnEmail.Enabled = !enabled;
 			btnImprime.Enabled = !enabled;
 			
@@ -542,7 +545,8 @@ namespace agenda
 			
 			SetaEdicaoLocal(false);						
 			bool enable = (edtUsuario.Text.Trim().CompareTo(Globais.sUsuario.Trim()) == 0) ||
-						  (cbxUsuarios.Text.Trim().CompareTo(Globais.sUsuario.Trim()) == 0);
+						  (cbxUsuarios.Text.Trim().CompareTo(Globais.sUsuario.Trim()) == 0) ||
+							Globais.bAdministrador;
 			btnExclui.Enabled = enable;
 			btnAltera.Enabled = enable;
 			btnCadAnexos.Enabled = enable;
@@ -609,7 +613,8 @@ namespace agenda
 		{
 			AtualizaDadosLocal(e.RowIndex);
 			bool enable = (edtUsuario.Text.Trim().CompareTo(Globais.sUsuario.Trim()) == 0) ||
-						  (cbxUsuarios.Text.Trim().CompareTo(Globais.sUsuario.Trim()) == 0);
+						  (cbxUsuarios.Text.Trim().CompareTo(Globais.sUsuario.Trim()) == 0) ||
+							Globais.bAdministrador;
 			btnExclui.Enabled = enable;
 			btnAltera.Enabled = enable;
 			btnCadAnexos.Enabled = enable;
@@ -1188,7 +1193,10 @@ namespace agenda
 		
 		void BtnAppClick(object sender, EventArgs e)
 		{
-			Clipboard.SetText(toolTip1.GetToolTip(btnApp));
+			string text = toolTip1.GetToolTip(btnApp);
+			if (text != null && !text.Equals("")) {
+				Clipboard.SetText(text);
+			}
 		}
 	}
 }

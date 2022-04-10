@@ -1165,7 +1165,8 @@ namespace classes {
 			string destino = null;
 			if (i != -1) {
 				destino = cod_fornecedor + dat_orcamento.Year + dat_orcamento.Month + cod_orcamento + ".pdf";						
-				pdf = "c:\\soft\\" + destino;
+				//pdf = "c:\\soft\\" + destino;
+				pdf = destino;
 			}
 			FileStream fs = new FileStream(pdf, FileMode.Create);
 			Document doc = new Document(PageSize.LETTER);

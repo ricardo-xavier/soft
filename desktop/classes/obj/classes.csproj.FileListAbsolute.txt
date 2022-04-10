@@ -3,3 +3,5 @@ C:\Sistema\Fontes SOFT\softplace\classes\obj\Debug\classes.fEntradaItem.resource
 C:\Sistema\Fontes SOFT\softplace\classes\obj\Debug\classes.csproj.GenerateResource.Cache
 C:\Sistema\Fontes SOFT\softplace\classes\obj\Debug\classes.dll
 C:\Sistema\Fontes SOFT\softplace\classes\obj\Debug\classes.pdb
+c:\soft\classes.dll
+c:\soft\classes.pdb

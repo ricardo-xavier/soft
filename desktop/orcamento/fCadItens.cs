@@ -667,7 +667,22 @@ namespace orcamento
 		{
 			string url = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://softplacemoveis.dyndns.org:8080/softws/softws/item/"
 				+ fornecedor.Trim() + "/" + data.ToString("yyyy-MM-dd") + "/" + cod_orcamento.ToString() + "/" + edtArea.Text.Trim() + "/" + edtDescricao.Text.Trim();
-			System.Diagnostics.Process.Start(url);	
+			System.Diagnostics.Process.Start(TiraAcentosUrl(url));
+		}
+		
+		string TiraAcentosUrl(string s)
+		{
+			return s.Replace("Ç", "%c3%87")
+				.Replace("Á", "%c3%81")
+				.Replace("É", "%c3%89")
+				.Replace("Í", "%c3%8d")
+				.Replace("Ó", "%c3%93")
+				.Replace("Ú", "%c3%9a")
+				.Replace("Â", "%c3%82")
+				.Replace("Ê", "%c3%8a")
+				.Replace("Ô", "%c3%94")
+				.Replace("À", "%c3%80")
+				.Replace("Ã", "%c3%83");
 		}
 		
 		private void Colore()

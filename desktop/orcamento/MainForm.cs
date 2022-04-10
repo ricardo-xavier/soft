@@ -257,8 +257,9 @@ namespace orcamento
 			per_comissao = comissao.Calcula("AIR.MICRO", "BH REVENDA", 1000, 30.00f);  // 5.00  20
 			*/
 			
-			//Globais.sUsuario = "mercia.melo";
+			//Globais.sUsuario = "fabiana.ferrari";
 			//Globais.bAdministrador = true;
+			//vendedorAcao = null;
 			
 			cControleAcesso acesso = new cControleAcesso();
 			if (!Globais.bAdministrador &&  !acesso.PermissaoSistema(Globais.sUsuario, Globais.sFilial, 

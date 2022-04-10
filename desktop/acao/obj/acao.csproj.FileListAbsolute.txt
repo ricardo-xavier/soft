@@ -10,17 +10,3 @@ C:\Sistema\Fontes SOFT\softplace\acao\obj\Debug\acao.SelecaoVendedor.resources
 C:\Sistema\Fontes SOFT\softplace\acao\obj\Debug\acao.csproj.GenerateResource.Cache
 C:\Sistema\Fontes SOFT\softplace\acao\obj\Debug\acao.exe
 C:\Sistema\Fontes SOFT\softplace\acao\obj\Debug\acao.pdb
-c:\soft\acao.exe
-c:\soft\acao.pdb
-C:\Sistema\Fontes SOFT\git\desktop\acao\obj\Debug\ResolveAssemblyReference.cache
-C:\Sistema\Fontes SOFT\git\desktop\acao\obj\Debug\acao.Estatisticas.resources
-C:\Sistema\Fontes SOFT\git\desktop\acao\obj\Debug\acao.fCadAcao.resources
-C:\Sistema\Fontes SOFT\git\desktop\acao\obj\Debug\acao.fCadGrupo.resources
-C:\Sistema\Fontes SOFT\git\desktop\acao\obj\Debug\acao.Filtro.resources
-C:\Sistema\Fontes SOFT\git\desktop\acao\obj\Debug\acao.fObservacao.resources
-C:\Sistema\Fontes SOFT\git\desktop\acao\obj\Debug\acao.fProdutosAcao.resources
-C:\Sistema\Fontes SOFT\git\desktop\acao\obj\Debug\acao.MainForm.resources
-C:\Sistema\Fontes SOFT\git\desktop\acao\obj\Debug\acao.SelecaoVendedor.resources
-C:\Sistema\Fontes SOFT\git\desktop\acao\obj\Debug\acao.csproj.GenerateResource.Cache
-C:\Sistema\Fontes SOFT\git\desktop\acao\obj\Debug\acao.exe
-C:\Sistema\Fontes SOFT\git\desktop\acao\obj\Debug\acao.pdb

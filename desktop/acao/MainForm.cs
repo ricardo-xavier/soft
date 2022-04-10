@@ -280,6 +280,7 @@ namespace acao
 				form.Acao.CodOrigem = dgvAcoes.Rows[i].Cells["CodOrigem"].Value.ToString();
 				form.Acao.IdtSituacao = dgvAcoes.Rows[i].Cells["CodSituacao"].Value.ToString();
 				form.Acao.TxtObservacao = dgvAcoes.Rows[i].Cells["Observação"].Value.ToString();
+				form.Acao.TxtConcorrentes = dgvAcoes.Rows[i].Cells["Concorrentes"].Value.ToString();
 				form.ShowDialog();
 			}
 			catch (Exception ex)

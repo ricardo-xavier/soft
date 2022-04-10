@@ -460,7 +460,7 @@ namespace acao
 			this.Controls.Add(this.dgvAcoes);
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Sistema SOFT - Ação Comercial - v2.9.2 (06/03/22)";
+			this.Text = "Sistema SOFT - Ação Comercial - v2.9.3 (12/03/22)";
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			((System.ComponentModel.ISupportInitialize)(this.dgvAcoes)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvContatos)).EndInit();
