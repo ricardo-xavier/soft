@@ -1,0 +1,25 @@
+﻿set term ^;
+create procedure p_clientes_acao(
+    seq_acao integer
+)
+returns (
+    clientes varchar(4000)
+) as
+declare variable codigo char(20);
+declare variable nome   char(50);
+begin
+    clientes = '';
+    for select ca.cod_cliente, cli.nom_parceiro
+            from clientes_acao ca
+            inner join parceiros cli on cli.cod_parceiro = ca.cod_cliente
+            where ca.seq_acao = :seq_acao
+            into :codigo, :nome
+    do begin
+        if (strlen(trim(clientes)) < 3931)
+        then begin
+            clientes = trim(clientes) || trim(:codigo) || ';' || trim(:nome) || ';';
+        end
+    end
+    suspend;
+end^
+set term ;^

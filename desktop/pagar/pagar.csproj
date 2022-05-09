@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{2114AC06-7DD0-4F1C-A914-E4534089DBBA}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>pagar</RootNamespace>
+    <AssemblyName>pagar</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>c:\soft</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="classes">
+      <HintPath>..\..\..\..\soft\classes.dll</HintPath>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient">
+      <HintPath>..\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\soft\itextsharp.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="fCadFormas.cs" />
+    <Compile Include="fCadFormas.Designer.cs">
+      <DependentUpon>fCadFormas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadNaturezas.cs" />
+    <Compile Include="fCadNaturezas.Designer.cs">
+      <DependentUpon>fCadNaturezas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadPendencias.cs" />
+    <Compile Include="fCadPendencias.Designer.cs">
+      <DependentUpon>fCadPendencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadTitulo.cs" />
+    <Compile Include="fCadTitulo.Designer.cs">
+      <DependentUpon>fCadTitulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fGraficoFixoVariavel.cs" />
+    <Compile Include="fGraficoFixoVariavel.Designer.cs">
+      <DependentUpon>fGraficoFixoVariavel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fGraficoNatureza.cs" />
+    <Compile Include="fGraficoNatureza.Designer.cs">
+      <DependentUpon>fGraficoNatureza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fGraficoTendencia.cs" />
+    <Compile Include="fGraficoTendencia.Designer.cs">
+      <DependentUpon>fGraficoTendencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fLote.cs" />
+    <Compile Include="fLote.Designer.cs">
+      <DependentUpon>fLote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPagamento.cs" />
+    <Compile Include="fPagamento.Designer.cs">
+      <DependentUpon>fPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSelecaoQuebra.cs" />
+    <Compile Include="fSelecaoQuebra.Designer.cs">
+      <DependentUpon>fSelecaoQuebra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSobre.cs" />
+    <Compile Include="fSobre.Designer.cs">
+      <DependentUpon>fSobre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraficoPizza.cs" />
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPagar.cs" />
+    <Compile Include="MenuPagar.Designer.cs">
+      <DependentUpon>MenuPagar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fCadFormas.resx">
+      <DependentUpon>fCadFormas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadNaturezas.resx">
+      <DependentUpon>fCadNaturezas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadPendencias.resx">
+      <DependentUpon>fCadPendencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadTitulo.resx">
+      <DependentUpon>fCadTitulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fGraficoFixoVariavel.resx">
+      <DependentUpon>fGraficoFixoVariavel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fGraficoNatureza.resx">
+      <DependentUpon>fGraficoNatureza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fGraficoTendencia.resx">
+      <DependentUpon>fGraficoTendencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLote.resx">
+      <DependentUpon>fLote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPagamento.resx">
+      <DependentUpon>fPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSelecaoQuebra.resx">
+      <DependentUpon>fSelecaoQuebra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSobre.resx">
+      <DependentUpon>fSobre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx" />
+    <EmbeddedResource Include="MenuPagar.resx">
+      <DependentUpon>MenuPagar.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\basico\basico.csproj">
+      <Project>{D149FEAA-DE43-4F55-9A2F-434A8E9D8124}</Project>
+      <Name>basico</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\cpd\cpd.csproj">
+      <Project>{4E8B4DE3-D5A7-4967-88AF-F4D86355B98C}</Project>
+      <Name>cpd</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\templates\templates.csproj">
+      <Project>{f90aceb5-de27-410c-9132-bcb9788a9464}</Project>
+      <Name>templates</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

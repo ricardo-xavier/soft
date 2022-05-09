@@ -1,0 +1,22 @@
+C:\Sistema\Fontes SOFT\softplace\pedido\obj\Debug\ResolveAssemblyReference.cache
+C:\Sistema\Fontes SOFT\softplace\pedido\obj\Debug\pedido.fAlteraComissao.resources
+C:\Sistema\Fontes SOFT\softplace\pedido\obj\Debug\pedido.fAlteraValor.resources
+C:\Sistema\Fontes SOFT\softplace\pedido\obj\Debug\pedido.fComissao.resources
+C:\Sistema\Fontes SOFT\softplace\pedido\obj\Debug\pedido.fParametrosImpressao2.resources
+C:\Sistema\Fontes SOFT\softplace\pedido\obj\Debug\pedido.fParametrosImpressaoCom.resources
+C:\Sistema\Fontes SOFT\softplace\pedido\obj\Debug\pedido.MainForm.resources
+C:\Sistema\Fontes SOFT\softplace\pedido\obj\Debug\pedido.csproj.GenerateResource.Cache
+C:\Sistema\Fontes SOFT\softplace\pedido\obj\Debug\pedido.exe
+C:\Sistema\Fontes SOFT\softplace\pedido\obj\Debug\pedido.pdb
+c:\soft\pedido.exe
+c:\soft\pedido.pdb
+C:\Sistema\Fontes SOFT\git\desktop\pedido\obj\Debug\ResolveAssemblyReference.cache
+C:\Sistema\Fontes SOFT\git\desktop\pedido\obj\Debug\pedido.fAlteraComissao.resources
+C:\Sistema\Fontes SOFT\git\desktop\pedido\obj\Debug\pedido.fAlteraValor.resources
+C:\Sistema\Fontes SOFT\git\desktop\pedido\obj\Debug\pedido.fComissao.resources
+C:\Sistema\Fontes SOFT\git\desktop\pedido\obj\Debug\pedido.fParametrosImpressao2.resources
+C:\Sistema\Fontes SOFT\git\desktop\pedido\obj\Debug\pedido.fParametrosImpressaoCom.resources
+C:\Sistema\Fontes SOFT\git\desktop\pedido\obj\Debug\pedido.MainForm.resources
+C:\Sistema\Fontes SOFT\git\desktop\pedido\obj\Debug\pedido.csproj.GenerateResource.Cache
+C:\Sistema\Fontes SOFT\git\desktop\pedido\obj\Debug\pedido.exe
+C:\Sistema\Fontes SOFT\git\desktop\pedido\obj\Debug\pedido.pdb

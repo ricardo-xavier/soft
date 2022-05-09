@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{18929DB1-B6AE-4A76-AB86-0D10CAE9FAD6}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>classes</RootNamespace>
+    <AssemblyName>classes</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>C:\Sistema\soft\homolog</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="FirebirdSql.Data.FirebirdClient">
+      <HintPath>..\..\..\soft\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\soft\itextsharp.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="templates">
+      <HintPath>..\..\..\soft\templates.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\templates\cCriptografia.cs">
+      <Link>cCriptografia.cs</Link>
+    </Compile>
+    <Compile Include="Acentuacao.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="cAgenda.cs" />
+    <Compile Include="cAtualizador.cs" />
+    <Compile Include="cAvisos.cs" />
+    <Compile Include="cCaracteristicas.cs" />
+    <Compile Include="cCargos.cs" />
+    <Compile Include="cComissaoLimiar.cs" />
+    <Compile Include="cCondicoesMontagem.cs" />
+    <Compile Include="cCondicoesPagto.cs" />
+    <Compile Include="cContatos.cs" />
+    <Compile Include="cControleAcesso.cs" />
+    <Compile Include="cEmailApp.cs" />
+    <Compile Include="cEstados.cs" />
+    <Compile Include="cExtenso.cs" />
+    <Compile Include="cFiliais.cs" />
+    <Compile Include="cFormas.cs" />
+    <Compile Include="cFormasRecebimento.cs" />
+    <Compile Include="cFuncionarios.cs" />
+    <Compile Include="cInformacoesFornecimento.cs" />
+    <Compile Include="cIntroducoes.cs" />
+    <Compile Include="cMensagens.cs" />
+    <Compile Include="cNaturezas.cs" />
+    <Compile Include="cNaturezasPagamento.cs" />
+    <Compile Include="cNaturezasRecebimento.cs" />
+    <Compile Include="ComissaoPDF.cs" />
+    <Compile Include="Contato.cs" />
+    <Compile Include="cOrcamentoPDF.cs" />
+    <Compile Include="cOrcamentos.cs" />
+    <Compile Include="cOrigens.cs" />
+    <Compile Include="cParametrosRemessa.cs" />
+    <Compile Include="cParceiros.cs" />
+    <Compile Include="cPedidoPDF.cs" />
+    <Compile Include="cPedidos.cs" />
+    <Compile Include="cPendencias.cs" />
+    <Compile Include="cPendenciasRecebimento.cs" />
+    <Compile Include="cProdutos.cs" />
+    <Compile Include="cProdutosAcao.cs" />
+    <Compile Include="cProgramas.cs" />
+    <Compile Include="cPropostaComercial.cs" />
+    <Compile Include="cRecibo.cs" />
+    <Compile Include="cRemessa.cs" />
+    <Compile Include="cSistemas.cs" />
+    <Compile Include="cSituacoes.cs" />
+    <Compile Include="cSituacoesAcao.cs" />
+    <Compile Include="cTabelas.cs" />
+    <Compile Include="cTermosAprovacao.cs" />
+    <Compile Include="cTermosGarantia.cs" />
+    <Compile Include="cTitulosPagar.cs" />
+    <Compile Include="cTitulosReceber.cs" />
+    <Compile Include="cUsuarios.cs" />
+    <Compile Include="fEntradaItem.cs" />
+    <Compile Include="fEntradaItem.Designer.cs">
+      <DependentUpon>fEntradaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globais.cs" />
+    <Compile Include="Graficos.cs" />
+    <Compile Include="Grid.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="pdf.cs" />
+    <Compile Include="PedidoConsolidado2.cs" />
+    <Compile Include="PedidoFabricaPDF.cs" />
+    <Compile Include="trace.cs" />
+    <Compile Include="Transferencia.cs" />
+    <EmbeddedResource Include="fEntradaItem.resx">
+      <DependentUpon>fEntradaItem.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="soft_udf.c" />
+  </ItemGroup>
+</Project>

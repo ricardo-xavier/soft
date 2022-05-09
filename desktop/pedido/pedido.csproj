@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{3C2CCD90-3601-4DE0-BF2E-B0C1263FE934}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>pedido</RootNamespace>
+    <AssemblyName>pedido</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>c:\soft</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>x86</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="classes">
+      <HintPath>..\..\..\..\soft\classes.dll</HintPath>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient">
+      <HintPath>..\..\..\soft\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="templates">
+      <HintPath>..\..\..\soft\templates.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="fAlteraComissao.cs" />
+    <Compile Include="fAlteraComissao.Designer.cs">
+      <DependentUpon>fAlteraComissao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAlteraValor.cs" />
+    <Compile Include="fAlteraValor.Designer.cs">
+      <DependentUpon>fAlteraValor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fComissao.cs" />
+    <Compile Include="fComissao.Designer.cs">
+      <DependentUpon>fComissao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fParametrosImpressao2.cs" />
+    <Compile Include="fParametrosImpressao2.Designer.cs">
+      <DependentUpon>fParametrosImpressao2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fParametrosImpressaoCom.cs" />
+    <Compile Include="fParametrosImpressaoCom.Designer.cs">
+      <DependentUpon>fParametrosImpressaoCom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fAlteraComissao.resx">
+      <DependentUpon>fAlteraComissao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAlteraValor.resx">
+      <DependentUpon>fAlteraValor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fComissao.resx">
+      <DependentUpon>fComissao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fParametrosImpressao2.resx">
+      <DependentUpon>fParametrosImpressao2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fParametrosImpressaoCom.resx">
+      <DependentUpon>fParametrosImpressaoCom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\agenda\agenda.csproj">
+      <Project>{7095E028-C3DB-4F6C-B553-3D5F55FA827E}</Project>
+      <Name>agenda</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\basico\basico.csproj">
+      <Project>{D149FEAA-DE43-4F55-9A2F-434A8E9D8124}</Project>
+      <Name>basico</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\orcamento\orcamento.csproj">
+      <Project>{B9F1B4C0-BF72-4904-92F5-0AD19AB8246E}</Project>
+      <Name>orcamento</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pagar\pagar.csproj">
+      <Project>{2114AC06-7DD0-4F1C-A914-E4534089DBBA}</Project>
+      <Name>pagar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\receber\receber.csproj">
+      <Project>{935B43D3-C147-4504-B9B5-A605BC914A7E}</Project>
+      <Name>receber</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,12 @@
+desktop/acao/obj/Debug/
+desktop/agenda/obj/Debug/
+desktop/basico/obj/Debug/
+desktop/orcamento/obj/Debug/
+desktop/templates/obj/Debug/
+desktop/classes/obj/Debug/
+desktop/gerencial/obj/Debug/
+desktop/receber/obj/Debug/
+desktop/pagar/obj/Debug/
+desktop/cpd/obj/Debug/
+desktop/pedido/obj/Debug/
+*.dll

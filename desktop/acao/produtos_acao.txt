@@ -1,0 +1,25 @@
+﻿set term ^;
+create procedure p_produtos_acao(
+    seq_acao integer
+)
+returns (
+    produtos varchar(4000)
+) as
+declare variable codigo char(20);
+declare variable nome   char(50);
+begin
+    produtos = '';
+    for select pa.cod_produto, pro.des_produto
+            from produtos_por_acao pa
+            inner join produtos_acao pro on pro.cod_produto = pa.cod_produto
+            where pa.seq_acao = :seq_acao
+            into :codigo, :nome
+    do begin
+        if (strlen(trim(produtos)) < 3931)
+        then begin
+            produtos = trim(produtos) || trim(:codigo) || ';' || trim(:nome) || ';';
+        end
+    end
+    suspend;
+end^
+set term ;^

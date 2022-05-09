@@ -1,0 +1,7 @@
+C:\Sistema\Fontes SOFT\softplace\gerencial\obj\Debug\ResolveAssemblyReference.cache
+C:\Sistema\Fontes SOFT\softplace\gerencial\obj\Debug\gerencial.fAvisos.resources
+C:\Sistema\Fontes SOFT\softplace\gerencial\obj\Debug\gerencial.fParamFluxoCaixa.resources
+C:\Sistema\Fontes SOFT\softplace\gerencial\obj\Debug\gerencial.MainForm.resources
+C:\Sistema\Fontes SOFT\softplace\gerencial\obj\Debug\gerencial.csproj.GenerateResource.Cache
+C:\Sistema\Fontes SOFT\softplace\gerencial\obj\Debug\gerencial.exe
+C:\Sistema\Fontes SOFT\softplace\gerencial\obj\Debug\gerencial.pdb

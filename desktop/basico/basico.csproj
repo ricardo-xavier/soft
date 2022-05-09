@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{D149FEAA-DE43-4F55-9A2F-434A8E9D8124}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>basico</RootNamespace>
+    <AssemblyName>basico</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>c:\soft</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="classes">
+      <HintPath>..\..\..\..\soft\classes.dll</HintPath>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient">
+      <HintPath>..\..\..\soft\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="AuditoriaDao.cs" />
+    <Compile Include="AuditoriaParceiros.cs" />
+    <Compile Include="AuditoriaParceiros.Designer.cs">
+      <DependentUpon>AuditoriaParceiros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadCaracteristicas.cs" />
+    <Compile Include="fCadCaracteristicas.Designer.cs">
+      <DependentUpon>fCadCaracteristicas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadCargos.cs" />
+    <Compile Include="fCadCargos.Designer.cs">
+      <DependentUpon>fCadCargos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadCondicoes.cs" />
+    <Compile Include="fCadCondicoes.Designer.cs">
+      <DependentUpon>fCadCondicoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadContatos.cs" />
+    <Compile Include="fCadContatos.Designer.cs">
+      <DependentUpon>fCadContatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadEmail.cs" />
+    <Compile Include="fCadEmail.Designer.cs">
+      <DependentUpon>fCadEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadEstados.cs" />
+    <Compile Include="fCadEstados.Designer.cs">
+      <DependentUpon>fCadEstados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadFuncionarios.cs" />
+    <Compile Include="fCadFuncionarios.Designer.cs">
+      <DependentUpon>fCadFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadNaturezas.cs" />
+    <Compile Include="fCadNaturezas.Designer.cs">
+      <DependentUpon>fCadNaturezas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadOrigens.cs" />
+    <Compile Include="fCadOrigens.Designer.cs">
+      <DependentUpon>fCadOrigens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadParceiros.cs" />
+    <Compile Include="fCadParceiros.Designer.cs">
+      <DependentUpon>fCadParceiros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadProdutos.cs" />
+    <Compile Include="fCadProdutos.Designer.cs">
+      <DependentUpon>fCadProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadProdutosAcao.cs" />
+    <Compile Include="fCadProdutosAcao.Designer.cs">
+      <DependentUpon>fCadProdutosAcao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadSituacoes.cs" />
+    <Compile Include="fCadSituacoes.Designer.cs">
+      <DependentUpon>fCadSituacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadSituacoesAcao.cs" />
+    <Compile Include="fCadSituacoesAcao.Designer.cs">
+      <DependentUpon>fCadSituacoesAcao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCadTabelas.cs" />
+    <Compile Include="fCadTabelas.Designer.cs">
+      <DependentUpon>fCadTabelas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fClienteBasico.cs" />
+    <Compile Include="fClienteBasico.Designer.cs">
+      <DependentUpon>fClienteBasico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCodigoCopia.cs" />
+    <Compile Include="fCodigoCopia.Designer.cs">
+      <DependentUpon>fCodigoCopia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fComissaoLimiar.cs" />
+    <Compile Include="fComissaoLimiar.Designer.cs">
+      <DependentUpon>fComissaoLimiar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fCondicoesMontagem.cs" />
+    <Compile Include="fCondicoesMontagem.Designer.cs">
+      <DependentUpon>fCondicoesMontagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fConParceiros.cs" />
+    <Compile Include="fConParceiros.Designer.cs">
+      <DependentUpon>fConParceiros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fEditaMemo.cs" />
+    <Compile Include="fEditaMemo.Designer.cs">
+      <DependentUpon>fEditaMemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fFiltroPedido.cs" />
+    <Compile Include="fFiltroPedido.Designer.cs">
+      <DependentUpon>fFiltroPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fFrete.cs" />
+    <Compile Include="fFrete.Designer.cs">
+      <DependentUpon>fFrete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fImpressaoParceiros.cs" />
+    <Compile Include="fImpressaoParceiros.Designer.cs">
+      <DependentUpon>fImpressaoParceiros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fInformacoesFornecimento.cs" />
+    <Compile Include="fInformacoesFornecimento.Designer.cs">
+      <DependentUpon>fInformacoesFornecimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fIntroducoes.cs" />
+    <Compile Include="fIntroducoes.Designer.cs">
+      <DependentUpon>fIntroducoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPrecos.cs" />
+    <Compile Include="fPrecos.Designer.cs">
+      <DependentUpon>fPrecos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSelecionaPedido.cs" />
+    <Compile Include="fSelecionaPedido.Designer.cs">
+      <DependentUpon>fSelecionaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSobre.cs" />
+    <Compile Include="fSobre.Designer.cs">
+      <DependentUpon>fSobre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTermosAprovacao.cs" />
+    <Compile Include="fTermosAprovacao.Designer.cs">
+      <DependentUpon>fTermosAprovacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTermosGarantia.cs" />
+    <Compile Include="fTermosGarantia.Designer.cs">
+      <DependentUpon>fTermosGarantia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parceiro.cs" />
+    <EmbeddedResource Include="AuditoriaParceiros.resx">
+      <DependentUpon>AuditoriaParceiros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadCaracteristicas.resx">
+      <DependentUpon>fCadCaracteristicas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadCargos.resx">
+      <DependentUpon>fCadCargos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadCondicoes.resx">
+      <DependentUpon>fCadCondicoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadContatos.resx">
+      <DependentUpon>fCadContatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadEmail.resx">
+      <DependentUpon>fCadEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadEstados.resx">
+      <DependentUpon>fCadEstados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadFuncionarios.resx">
+      <DependentUpon>fCadFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadNaturezas.resx">
+      <DependentUpon>fCadNaturezas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadOrigens.resx">
+      <DependentUpon>fCadOrigens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadParceiros.resx">
+      <DependentUpon>fCadParceiros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadProdutos.resx">
+      <DependentUpon>fCadProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadProdutosAcao.resx">
+      <DependentUpon>fCadProdutosAcao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadSituacoes.resx">
+      <DependentUpon>fCadSituacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadSituacoesAcao.resx">
+      <DependentUpon>fCadSituacoesAcao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCadTabelas.resx">
+      <DependentUpon>fCadTabelas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fClienteBasico.resx">
+      <DependentUpon>fClienteBasico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCodigoCopia.resx">
+      <DependentUpon>fCodigoCopia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fComissaoLimiar.resx">
+      <DependentUpon>fComissaoLimiar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCondicoesMontagem.resx">
+      <DependentUpon>fCondicoesMontagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fConParceiros.resx">
+      <DependentUpon>fConParceiros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEditaMemo.resx">
+      <DependentUpon>fEditaMemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fFiltroPedido.resx">
+      <DependentUpon>fFiltroPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fFrete.resx">
+      <DependentUpon>fFrete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fImpressaoParceiros.resx">
+      <DependentUpon>fImpressaoParceiros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fInformacoesFornecimento.resx">
+      <DependentUpon>fInformacoesFornecimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fIntroducoes.resx">
+      <DependentUpon>fIntroducoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPrecos.resx">
+      <DependentUpon>fPrecos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSelecionaPedido.resx">
+      <DependentUpon>fSelecionaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTermosAprovacao.resx">
+      <DependentUpon>fTermosAprovacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTermosGarantia.resx">
+      <DependentUpon>fTermosGarantia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\templates\templates.csproj">
+      <Project>{F90ACEB5-DE27-410C-9132-BCB9788A9464}</Project>
+      <Name>templates</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
