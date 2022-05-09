@@ -11,3 +11,18 @@ C:\Sistema\Fontes SOFT\softplace\receber\obj\Debug\receber.MainForm.resources
 C:\Sistema\Fontes SOFT\softplace\receber\obj\Debug\receber.csproj.GenerateResource.Cache
 C:\Sistema\Fontes SOFT\softplace\receber\obj\Debug\receber.exe
 C:\Sistema\Fontes SOFT\softplace\receber\obj\Debug\receber.pdb
+c:\soft\receber.exe
+c:\soft\receber.pdb
+C:\Sistema\Fontes SOFT\git\desktop\receber\obj\Debug\ResolveAssemblyReference.cache
+C:\Sistema\Fontes SOFT\git\desktop\receber\obj\Debug\receber.fCadFormas.resources
+C:\Sistema\Fontes SOFT\git\desktop\receber\obj\Debug\receber.fCadNaturezas.resources
+C:\Sistema\Fontes SOFT\git\desktop\receber\obj\Debug\receber.fCadPendencias.resources
+C:\Sistema\Fontes SOFT\git\desktop\receber\obj\Debug\receber.fCadTitulo.resources
+C:\Sistema\Fontes SOFT\git\desktop\receber\obj\Debug\receber.fParametrosImpressao.resources
+C:\Sistema\Fontes SOFT\git\desktop\receber\obj\Debug\receber.fParametrosRemessa.resources
+C:\Sistema\Fontes SOFT\git\desktop\receber\obj\Debug\receber.fRecebimento.resources
+C:\Sistema\Fontes SOFT\git\desktop\receber\obj\Debug\receber.fSobre.resources
+C:\Sistema\Fontes SOFT\git\desktop\receber\obj\Debug\receber.MainForm.resources
+C:\Sistema\Fontes SOFT\git\desktop\receber\obj\Debug\receber.csproj.GenerateResource.Cache
+C:\Sistema\Fontes SOFT\git\desktop\receber\obj\Debug\receber.exe
+C:\Sistema\Fontes SOFT\git\desktop\receber\obj\Debug\receber.pdb

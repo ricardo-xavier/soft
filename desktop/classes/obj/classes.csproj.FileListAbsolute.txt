@@ -5,3 +5,10 @@ C:\Sistema\Fontes SOFT\softplace\classes\obj\Debug\classes.dll
 C:\Sistema\Fontes SOFT\softplace\classes\obj\Debug\classes.pdb
 c:\soft\classes.dll
 c:\soft\classes.pdb
+C:\Sistema\soft\homolog\classes.dll
+C:\Sistema\soft\homolog\classes.pdb
+C:\Sistema\Fontes SOFT\git\desktop\classes\obj\Debug\ResolveAssemblyReference.cache
+C:\Sistema\Fontes SOFT\git\desktop\classes\obj\Debug\classes.fEntradaItem.resources
+C:\Sistema\Fontes SOFT\git\desktop\classes\obj\Debug\classes.csproj.GenerateResource.Cache
+C:\Sistema\Fontes SOFT\git\desktop\classes\obj\Debug\classes.dll
+C:\Sistema\Fontes SOFT\git\desktop\classes\obj\Debug\classes.pdb

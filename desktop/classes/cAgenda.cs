@@ -430,6 +430,12 @@ namespace classes
 				cmd = new FbCommand(sql, Globais.bd);
 				Log.Grava(Globais.sUsuario, cmd.CommandText);
 				cmd.ExecuteNonQuery();
+				sql = "delete from PEDIDOS_AGENDA " +
+						"where COD_USUARIO='" + usuario + "' and " +
+						"      DAT_AGENDAMENTO='" + data.ToString("M/d/yyyy HH:mm:ss") + "'";
+				cmd = new FbCommand(sql, Globais.bd);
+				Log.Grava(Globais.sUsuario, cmd.CommandText);
+				cmd.ExecuteNonQuery();
 			}
 			catch (Exception err)
 			{

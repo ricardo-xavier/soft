@@ -7,4 +7,6 @@ desktop/classes/obj/Debug/
 desktop/gerencial/obj/Debug/
 desktop/receber/obj/Debug/
 desktop/pagar/obj/Debug/
+desktop/cpd/obj/Debug/
+desktop/pedido/obj/Debug/
 *.dll
