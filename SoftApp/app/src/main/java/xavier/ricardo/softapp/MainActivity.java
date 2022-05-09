@@ -5,6 +5,8 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -27,6 +29,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -51,6 +54,8 @@ public class MainActivity extends Activity {
     private DatePicker dpData;
     private String usuario;
     private Agenda agenda;
+    private String chaveFoto;
+    private View parentFoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -251,6 +256,9 @@ public class MainActivity extends Activity {
         if (ddd.equals("00")) {
             ddd = "";
         }
+        if (ddd.length() == 2) {
+            ddd = "0" + ddd;
+        }
         return ddd + prefixo + sufixo;
     }
 
@@ -275,7 +283,8 @@ public class MainActivity extends Activity {
 
     public void reagendar(View v) {
 
-        Button encerrar = findViewById(R.id.btEncerrar);
+        View p = (View) v.getParent();
+        Button encerrar = p.findViewById(R.id.btEncerrar);
         String chave = (String) encerrar.getTag();
         String previsao = String.format("%04d-%02d-%02d", dpData.getYear(), dpData.getMonth()+1, dpData.getDayOfMonth());
         String[] partes = chave.split(";");
@@ -303,18 +312,21 @@ public class MainActivity extends Activity {
     }
 
     public void foto(View v) {
-        try {
-            File photoFile = createImageFile();
-            Uri photoURI = FileProvider.getUriForFile(this, "xavier.ricardo.softapp.provider", photoFile);
-            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        chaveFoto = v.getTag().toString();
+        parentFoto = ((View) v.getParent().getParent()).findViewById(R.id.llFoto);
+        //try {
+            //File photoFile = createImageFile();
+            //Uri photoURI = FileProvider.getUriForFile(this, "xavier.ricardo.softapp.provider", photoFile);
+            //Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            Intent takePictureIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                //takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //} catch (IOException e) {
+            //e.printStackTrace();
+        //}
     }
 
     @Override
@@ -329,6 +341,17 @@ public class MainActivity extends Activity {
 
             if (requestCode == REQUEST_IMAGE_CAPTURE) {
                 try {
+
+                    ImageView imageView;
+                    if (parentFoto != null) {
+                        imageView = (ImageView) parentFoto.findViewById(R.id.ivFoto);
+                    } else {
+                        imageView = (ImageView) findViewById(R.id.ivFoto);
+                    }
+                    parentFoto = null;
+                    imageView.setImageURI(data.getData());
+                    /*
+                    imageFilePath = data.getData().getPath();
                     File file = new File(imageFilePath);
                     byte[] bArray = new byte[(int) file.length()];
                     FileInputStream stream = new FileInputStream(file);
@@ -337,19 +360,33 @@ public class MainActivity extends Activity {
                     String base64 = Base64.encodeToString(bArray, Base64.DEFAULT);
                     file.delete();
 
+                     */
+                    Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                    byte[] bArray = baos.toByteArray();
+                    String base64 = Base64.encodeToString(bArray, Base64.DEFAULT);
+
                     Button btn = (Button) findViewById(R.id.btDetalhes);
                     String[] partes = btn.getText().toString().split(" ");
+                    if (chaveFoto != null) {
+                        partes = chaveFoto.split(" ");
+                    }
+
                     if (partes.length >= 3) {
                         String fornecedor = partes[0].trim();
                         String[] dmy = partes[1].split("/");
                         if (dmy.length == 3) {
                             String dt = String.format("%04d-%02d-%02d", Integer.parseInt(dmy[2]), Integer.parseInt(dmy[1]), Integer.parseInt(dmy[0]));
                             String orcamento = partes[2].split("-")[0];
+                            timeStamp =
+                                    new SimpleDateFormat("yyyyMMdd_HHmmss",
+                                            Locale.getDefault()).format(new Date());
                             new FotoTask(this, fornecedor, dt, orcamento, base64, timeStamp).execute();
                         }
                     }
 
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 return;

@@ -90,12 +90,16 @@ public class DrawView extends View {
 		
 	}
 
-	public void limpa() {
+	public static void limpa() {
 		for (List<Ponto> pontos : partes) {
 			pontos.clear();
 		}
 		partes.clear();
 		pontos.clear();
+	}
+
+	public void limpaEinvalida() {
+		limpa();
 		invalidate();
 	}
 

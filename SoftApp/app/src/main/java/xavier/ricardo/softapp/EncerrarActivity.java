@@ -20,6 +20,7 @@ public class EncerrarActivity extends Activity {
 		setContentView(R.layout.activity_encerrar);
 		
 		DrawView.setReadOnly(true);
+		DrawView.limpa();
 		
 		Intent intent = getIntent();
 		String chave = intent.getStringExtra("chave");
@@ -53,14 +54,15 @@ public class EncerrarActivity extends Activity {
 	}
 	
 	public void confirma(View v) {
-		
+
+
 		Intent intent = getIntent();
 		String chave = intent.getStringExtra("chave");
 		System.out.println(chave);
 		String[] partes = chave.split(";");
 		String usuario = partes[0];
 		String data = partes[1];
-		
+
 		EditText etObservacao = (EditText) findViewById(R.id.etObservacao);
 		String observacao = etObservacao.getText().toString();
 		

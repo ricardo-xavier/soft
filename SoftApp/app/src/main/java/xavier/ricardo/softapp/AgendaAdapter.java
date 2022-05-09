@@ -114,11 +114,14 @@ public class AgendaAdapter extends BaseAdapter {
 		Button btDetalhes = (Button) v.findViewById(R.id.btDetalhes);
 		if (compromisso.getCodFornecedor() != null) {
 			btDetalhes.setVisibility(View.VISIBLE);
-			btDetalhes.setText(String.format("%s %s %d-%d", 
+			String text = String.format("%s %s %d-%d",
 					compromisso.getCodFornecedor(),
 					compromisso.getDatOrcamento(),
 					compromisso.getCodOrcamento(),
-					compromisso.getNroPedido()));
+					compromisso.getNroPedido());
+			btDetalhes.setText(text);
+			ImageButton btFoto = (ImageButton) v.findViewById(R.id.ibFoto);
+			btFoto.setTag(text);
 		} else {
 			btDetalhes.setVisibility(View.INVISIBLE);			
 		}

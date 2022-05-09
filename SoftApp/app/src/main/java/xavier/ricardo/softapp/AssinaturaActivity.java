@@ -34,11 +34,7 @@ public class AssinaturaActivity extends Activity {
 
 	public void limpa(View v) {
 		DrawView assinatura = (DrawView) findViewById(R.id.vwAssinatura);
-		assinatura.limpa();
-	}
-
-	public void cancela(View v) {
-		limpa(v);
+		assinatura.limpaEinvalida();
 		DrawView.setPartes(partes);
 		DrawView.setReadOnly(true);
 		finish();
