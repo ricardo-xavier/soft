@@ -264,7 +264,8 @@ namespace pedido
 			short codigo = Globais.StrToShort(dgvCadastro.Rows[i].Cells["CodPedido"].Value.ToString());
 			DateTime data = DateTime.Parse(dgvCadastro.Rows[i].Cells["Data"].Value.ToString());
 			DateTime hoje = DateTime.Now;
-			if (data.Date != hoje.Date) {
+			if (data.Year != hoje.Year || data.Month != hoje.Month || data.Day != hoje.Day || 
+			    (edtObservacao.Text != null && edtObservacao.Text.Trim().Length > 0)) {
 				if (!Globais.bAdministrador) {
 					MessageBox.Show("Esse pedido só pode ser excluído pelo administrador");
 					return;
