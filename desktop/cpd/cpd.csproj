@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="cParametros.cs" />
     <Compile Include="fCadFiliais.cs" />
     <Compile Include="fCadFiliais.Designer.cs">
       <DependentUpon>fCadFiliais.cs</DependentUpon>

@@ -575,5 +575,9 @@ namespace pagar
 			MessageBox.Show(texto, titulo);
 			Close();
 		}
+		void CbxPedidosSelectedIndexChanged(object sender, EventArgs e)
+		{
+	
+		}
 	}
 }

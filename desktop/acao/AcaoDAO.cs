@@ -553,10 +553,7 @@ namespace acao
 		                               ref float vConcretizadas,
 		                               ref int pConcretizadas,
 		                               ref int nTotalOrcamentos,
-		                               ref float vTotalOrcamentos,
-		                               ref int nConcretizados, 
-		                               ref float vConcretizados,
-		                               ref int pConcretizados                      
+		                               ref float vTotalOrcamentos		                               
 		                              )
 		{
 			int n;

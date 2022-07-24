@@ -20,6 +20,7 @@ using templates;
 using classes;
 using System.IO;
 using basico;
+using FirebirdSql.Data.FirebirdClient;
 
 namespace orcamento
 {
@@ -663,10 +664,31 @@ namespace orcamento
 			Posiciona(edtArea.Text, edtCodigo.Text, edtSubCodigo.Text);			
 		}
 		
+		string GetIp() {
+			string sql = "select IP from PARAMETROS";
+			string ip = "192.168.56.1";
+			FbCommand cmd =  new FbCommand(sql, Globais.bd);
+			FbDataReader reader = cmd.ExecuteReader(CommandBehavior.Default);
+			if (reader.Read())
+			{
+				ip = reader.GetString(0).Trim();
+			}
+			reader.Close();			
+			return ip;
+		}
+		
 		void BtnQrcodeClick(object sender, EventArgs e)
 		{
-			string url = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://softplacemoveis.dyndns.org:8080/softws/softws/item/"
+			/*
+			string IP = GetIp();
+			//string url = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://softplacemoveis.dyndns.org:8080/softws/softws/item/"
+			string url = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://" + IP + ":8080/softws/softws/item/"
 				+ fornecedor.Trim() + "/" + data.ToString("yyyy-MM-dd") + "/" + cod_orcamento.ToString() + "/" + edtArea.Text.Trim() + "/" + edtDescricao.Text.Trim();
+			*/
+			string texto = fornecedor.Trim() + " - " + edtCodigo.Text.Trim() + " - " + edtSubCodigo.Text.Trim() + "%0d%0a" +
+				"R$ " + edtPrecoTotal.Text + "%0d%0a" +
+				edtTexto.Text.Trim();
+			string url = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=" + texto;
 			System.Diagnostics.Process.Start(TiraAcentosUrl(url));
 		}
 		

@@ -266,8 +266,9 @@ namespace pedido
 			DateTime hoje = DateTime.Now;
 			if (data.Year != hoje.Year || data.Month != hoje.Month || data.Day != hoje.Day || 
 			    (edtObservacao.Text != null && edtObservacao.Text.Trim().Length > 0)) {
+				string motivo = MotivoRestricao(data, hoje, edtObservacao.Text);
 				if (!Globais.bAdministrador) {
-					MessageBox.Show("Esse pedido só pode ser excluído pelo administrador");
+					MessageBox.Show("Esse pedido só pode ser excluído pelo administrador(" + motivo + ")");
 					return;
 				}
 			}
@@ -289,6 +290,25 @@ namespace pedido
 				orc.AlteraStatus(fornecedor, data, orcamento, 'E', ref msg);
 				orc.AlteraPedido(fornecedor, data, orcamento, 'N');
 			}
+		}
+		
+		string MotivoRestricao(DateTime data, DateTime hoje, String observacao) {
+			string motivo = "";
+			if (data.Year != hoje.Year) {
+				motivo += " ano=" + data.Year.ToString() + "!=" + hoje.Year.ToString();
+			}
+			if (data.Month != hoje.Month) {
+				motivo += " mes=" + data.Month.ToString() + "!=" + hoje.Month.ToString();
+			}
+			if (data.Day != hoje.Day) {
+				motivo += " dia=" + data.Day.ToString() + "!=" + hoje.Day.ToString();
+			}
+			if (observacao != null && observacao.Trim().Length > 0) {
+				int len = observacao.Trim().Length;
+				string obs = len > 10 ? observacao.Substring(0, 10) : observacao;
+				motivo += " obs=" + len.ToString() + " [" + obs + "]";
+			}
+			return motivo;
 		}
 		
 		void DgvCadastroRowEnter(object sender, DataGridViewCellEventArgs e)

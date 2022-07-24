@@ -665,7 +665,7 @@ namespace orcamento
 			this.Controls.Add(this.dgvCadastro);
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Sistema SOFT - Orçamento - v2.9.0 (10/04/22)";
+			this.Text = "Sistema SOFT - Orçamento - v2.10.0 (23/07/22)";
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			((System.ComponentModel.ISupportInitialize)(this.dgvCadastro)).EndInit();
 			this.gbxAnexos.ResumeLayout(false);

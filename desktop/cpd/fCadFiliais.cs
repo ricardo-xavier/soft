@@ -43,6 +43,7 @@ namespace cpd
 			edtFAX.Text = FONE.PoeEdicao("");			
 			edtEmail.Text = "";
 			edtServidor.Text = "";
+			edtIP.Text = "";
 		}		
 		
 		public void SetaEdicaoLocal(bool enabled)
@@ -62,6 +63,7 @@ namespace cpd
 			edtFAX.Enabled = enabled;			
 			edtEmail.Enabled = enabled;
 			edtServidor.Enabled = enabled;
+			edtIP.Enabled = enabled;
 		}
 		
 		public void AtualizaDadosLocal(int i)
@@ -79,8 +81,11 @@ namespace cpd
 			edtFone1.Text = FONE.PoeEdicao(dgvCadastro.Rows[i].Cells[12].Value.ToString().Trim());
 			edtFone2.Text = FONE.PoeEdicao(dgvCadastro.Rows[i].Cells[13].Value.ToString().Trim());
 			edtFAX.Text = FONE.PoeEdicao(dgvCadastro.Rows[i].Cells[14].Value.ToString().Trim());			
-			edtEmail.Text = dgvCadastro.Rows[i].Cells[15].Value.ToString().Trim();		
-			edtServidor.Text = dgvCadastro.Rows[i].Cells[16].Value.ToString().Trim();	
+			edtEmail.Text = dgvCadastro.Rows[i].Cells[15].Value.ToString().Trim();	
+			edtServidor.Text = dgvCadastro.Rows[i].Cells[16].Value.ToString().Trim();					
+			cParametros prms = new cParametros();
+			string IP = prms.GetIp();
+			edtIP.Text = IP.Trim();
 		}
 
 		public frmCadFiliais()
@@ -122,7 +127,9 @@ namespace cpd
 										edtEmail.Text,
 										edtServidor.Text,
 				                        ref msg);
-			else
+			else {
+				cParametros prms = new cParametros();
+				prms.Altera(edtIP.Text, ref msg);
 				result = filiais.Altera(codigo, edtDescricao.Text,
 				                        CNPJ.TiraEdicao(edtCNPJ.Text),
 										edtInsEst.Text,
@@ -140,6 +147,7 @@ namespace cpd
 										edtEmail.Text,
 										edtServidor.Text,
 				                        ref msg);
+			}
 			if (!result)
 			{
 				if (acao == 'i')

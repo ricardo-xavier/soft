@@ -62,6 +62,7 @@ namespace orcamento
 			this.edtLimiar = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.btnQrcode = new System.Windows.Forms.Button();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.gbxFoto.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.imgProduto)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvFormula)).BeginInit();
@@ -340,11 +341,24 @@ namespace orcamento
 			this.btnQrcode.UseVisualStyleBackColor = true;
 			this.btnQrcode.Click += new System.EventHandler(this.BtnQrcodeClick);
 			// 
+			// textBox1
+			// 
+			this.textBox1.BackColor = System.Drawing.SystemColors.Window;
+			this.textBox1.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox1.Location = new System.Drawing.Point(12, 252);
+			this.textBox1.MaxLength = 20;
+			this.textBox1.Name = "textBox1";
+			this.textBox1.ReadOnly = true;
+			this.textBox1.Size = new System.Drawing.Size(560, 20);
+			this.textBox1.TabIndex = 117;
+			this.textBox1.Visible = false;
+			// 
 			// fConsultaPreco
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(593, 315);
+			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.btnQrcode);
 			this.Controls.Add(this.dgvFormula);
 			this.Controls.Add(this.label3);
@@ -404,5 +418,6 @@ namespace orcamento
 		private System.Windows.Forms.TextBox edtSubCodigo;
 		private System.Windows.Forms.Button btnPesquisaRapida;
 		private System.Windows.Forms.Button btnQrcode;
+		private System.Windows.Forms.TextBox textBox1;
 	}
 }

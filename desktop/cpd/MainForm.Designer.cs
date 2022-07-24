@@ -144,7 +144,7 @@ namespace cpd
 			this.ClientSize = new System.Drawing.Size(584, 414);
 			this.Controls.Add(this.mnuCPD);
 			this.Name = "MainForm";
-			this.Text = "Sistema SOFT - CPD - v2.1.1 (03/01/21)";
+			this.Text = "Sistema SOFT - CPD - v2.2.0 (09/07/22)";
 			this.Controls.SetChildIndex(this.imgSoftplace, 0);
 			this.Controls.SetChildIndex(this.mnuCPD, 0);
 			((System.ComponentModel.ISupportInitialize)(this.imgSoftplace)).EndInit();

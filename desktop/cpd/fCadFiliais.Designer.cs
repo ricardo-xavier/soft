@@ -63,6 +63,8 @@ namespace cpd
 			this.lblFAX = new System.Windows.Forms.Label();
 			this.edtServidor = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.edtIP = new System.Windows.Forms.TextBox();
 			this.pnlEdicao.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -100,6 +102,8 @@ namespace cpd
 			// 
 			// pnlEdicao
 			// 
+			this.pnlEdicao.Controls.Add(this.edtIP);
+			this.pnlEdicao.Controls.Add(this.label2);
 			this.pnlEdicao.Controls.Add(this.edtServidor);
 			this.pnlEdicao.Controls.Add(this.label1);
 			this.pnlEdicao.Controls.Add(this.edtFAX);
@@ -165,6 +169,8 @@ namespace cpd
 			this.pnlEdicao.Controls.SetChildIndex(this.edtFAX, 0);
 			this.pnlEdicao.Controls.SetChildIndex(this.label1, 0);
 			this.pnlEdicao.Controls.SetChildIndex(this.edtServidor, 0);
+			this.pnlEdicao.Controls.SetChildIndex(this.label2, 0);
+			this.pnlEdicao.Controls.SetChildIndex(this.edtIP, 0);
 			// 
 			// btnFecha
 			// 
@@ -474,6 +480,25 @@ namespace cpd
 			this.label1.Text = "Servidor";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
+			// label2
+			// 
+			this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
+			this.label2.Location = new System.Drawing.Point(10, 273);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(80, 20);
+			this.label2.TabIndex = 76;
+			this.label2.Text = "IP Servidor";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// edtIP
+			// 
+			this.edtIP.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.edtIP.Location = new System.Drawing.Point(95, 274);
+			this.edtIP.MaxLength = 50;
+			this.edtIP.Name = "edtIP";
+			this.edtIP.Size = new System.Drawing.Size(356, 20);
+			this.edtIP.TabIndex = 77;
+			// 
 			// frmCadFiliais
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -516,5 +541,7 @@ namespace cpd
 		private System.Windows.Forms.TextBox edtEmail;
 		private System.Windows.Forms.TextBox edtServidor;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TextBox edtIP;
+		private System.Windows.Forms.Label label2;
 	}
 }

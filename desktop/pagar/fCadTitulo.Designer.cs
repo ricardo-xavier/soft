@@ -301,10 +301,10 @@ namespace pagar
 			this.edtValor.Size = new System.Drawing.Size(90, 20);
 			this.edtValor.TabIndex = 12;
 			this.edtValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			this.edtValor.TextChanged += new System.EventHandler(this.EdtValorTextChanged);
 			this.edtValor.Click += new System.EventHandler(this.EdtValorClick);
-			this.edtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EdtValorKeyPress);
+			this.edtValor.TextChanged += new System.EventHandler(this.EdtValorTextChanged);
 			this.edtValor.Enter += new System.EventHandler(this.EdtValorEnter);
+			this.edtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EdtValorKeyPress);
 			// 
 			// label8
 			// 
@@ -453,10 +453,10 @@ namespace pagar
 			this.edtPago.Size = new System.Drawing.Size(90, 20);
 			this.edtPago.TabIndex = 1;
 			this.edtPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			this.edtPago.TextChanged += new System.EventHandler(this.EdtValorTextChanged);
 			this.edtPago.Click += new System.EventHandler(this.EdtValorClick);
-			this.edtPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EdtValorKeyPress);
+			this.edtPago.TextChanged += new System.EventHandler(this.EdtValorTextChanged);
 			this.edtPago.Enter += new System.EventHandler(this.EdtValorEnter);
+			this.edtPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EdtValorKeyPress);
 			// 
 			// label13
 			// 
@@ -567,6 +567,7 @@ namespace pagar
 			this.cbxPedidos.Name = "cbxPedidos";
 			this.cbxPedidos.Size = new System.Drawing.Size(211, 22);
 			this.cbxPedidos.TabIndex = 16;
+			this.cbxPedidos.SelectedIndexChanged += new System.EventHandler(this.CbxPedidosSelectedIndexChanged);
 			// 
 			// label7
 			// 
@@ -653,6 +654,7 @@ namespace pagar
 			this.gbxPendencia.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
+
 		}
 		public System.Windows.Forms.RadioButton rbtSemiFixa;
 		public System.Windows.Forms.Button btnLote;

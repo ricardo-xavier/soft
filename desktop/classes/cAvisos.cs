@@ -998,7 +998,7 @@ namespace classes
 			servidorSmtp = "smtp.gmail.com";
 			portaSmtp = 587;
 			usuarioSmtp = "softplacemoveisbh@gmail.com"; //"ricardo.costa.xavier@gmail.com";
-			senhaSmtp = "soft101010"; //"R1afalbr";
+			senhaSmtp = "soft101010";
 			*/
 			
 			smtp.Host = servidorSmtp;

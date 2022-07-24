@@ -26,8 +26,7 @@ namespace acao
 			AcaoDAO.Estatisticas(dgvAcoes, dgvOrcamentos, vendedor, 
 			                     ref nTotalAcoes, ref vTotalAcoes,
 			                     ref nConcretizadas, ref vConcretizadas, ref pConcretizadas,
-			                     ref nTotalOrcamentos, ref vTotalOrcamentos,
-			                     ref nConcretizados, ref vConcretizados, ref pConcretizados);
+			                     ref nTotalOrcamentos, ref vTotalOrcamentos);
 			lblQtdTotalAcoes.Text = nTotalAcoes.ToString();
 			lblVlrAcoes.Text = vTotalAcoes.ToString("###,###,##0.00");
 			lblQtdConcretizadas.Text = nConcretizadas.ToString();

@@ -256,18 +256,52 @@ namespace orcamento
 			CalculaPreco();
 			MostraImagem();
 		}
+
 		
-		void LinkLabel1LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-		{
-			string url = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://softplacemoveis.dyndns.org:8080/softws/softws/produto/"
-			                                 + fornecedor + "/" + edtProduto.Text + "/" + edtSubCodigo.Text + "/" + tabela + "/" + caracteristica.Replace("%", "%2525");
-			System.Diagnostics.Process.Start(url);
-		}
 		void BtnQrcodeClick(object sender, EventArgs e)
 		{
-			string url = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://softplacemoveis.dyndns.org:8080/softws/softws/produto/"
-			                                 + fornecedor + "/" + edtProduto.Text + "/" + edtSubCodigo.Text + "/" + tabela + "/" + caracteristica.Replace("%", "%2525");
-			System.Diagnostics.Process.Start(url);
+			//string IP = GetIp();
+			//string url = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://softplacemoveis.dyndns.org:8080/softws/softws/produto/"
+			//string url = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://" + IP + ":8080/softws/softws/produto/"
+			                                 //+ fornecedor + "/" + edtProduto.Text + "/" + edtSubCodigo.Text + "/" + tabela + "/" + caracteristica.Replace("%", "%2525");
+			
+			cProdutos produtos = new cProdutos();
+			string texto = fornecedor.Trim() + " - " + cbxCaracteristicas.Text.Trim() + "%0d%0a" +
+				edtProduto.Text.Trim() + " - " + edtSubCodigo.Text.Trim() + "%0d%0a" +
+				"R$ " + edtPrecoTotal.Text + "%0d%0a" +
+				produtos.Descricao(edtProduto.Text.Trim(), edtSubCodigo.Text.Trim()).Trim();
+
+			string url = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=" + texto;
+			textBox1.Text = TiraAcentosUrl(url);
+			System.Diagnostics.Process.Start(TiraAcentosUrl(url));
 		}
+		
+		string TiraAcentosUrl(string s)
+		{
+			return s.Replace("Ç", "%c3%87")
+				.Replace("Á", "%c3%81")
+				.Replace("É", "%c3%89")
+				.Replace("Í", "%c3%8d")
+				.Replace("Ó", "%c3%93")
+				.Replace("Ú", "%c3%9a")
+				.Replace("Â", "%c3%82")
+				.Replace("Ê", "%c3%8a")
+				.Replace("Ô", "%c3%94")
+				.Replace("À", "%c3%80")
+				.Replace("Ã", "%c3%83");
+		}
+		
+		string GetIp() {
+			string sql = "select IP from PARAMETROS";
+			string ip = "192.168.56.1";
+			FbCommand cmd =  new FbCommand(sql, Globais.bd);
+			FbDataReader reader = cmd.ExecuteReader(CommandBehavior.Default);
+			if (reader.Read())
+			{
+				ip = reader.GetString(0).Trim();
+			}
+			reader.Close();			
+			return ip;
+		}		
 	}
 }

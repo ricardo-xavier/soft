@@ -412,7 +412,7 @@ namespace basico
 			this.Controls.Add(this.mnuBasico);
 			this.MainMenuStrip = this.mnuBasico;
 			this.Name = "MainForm";
-			this.Text = "Sistema SOFT - Cadastros Básicos - v2.3.1 (11/04/21)";
+			this.Text = "Sistema SOFT - Cadastros Básicos - v2.3.2 (23/07/22)";
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			this.Shown += new System.EventHandler(this.MainFormShown);
 			this.Controls.SetChildIndex(this.imgSoftplace, 0);

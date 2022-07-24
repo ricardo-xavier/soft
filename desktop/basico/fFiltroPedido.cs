@@ -333,6 +333,7 @@ namespace basico
 		
 		void EdtCodigoTextChanged(object sender, EventArgs e)
 		{
+			cbxCaracteristicas.Items.Clear();
 			cCaracteristicas caracteristicas = new cCaracteristicas();
 			this.Cursor = Cursors.WaitCursor;
 			caracteristicas.Carrega(cbxCaracteristicas, edtCodigo.Text);

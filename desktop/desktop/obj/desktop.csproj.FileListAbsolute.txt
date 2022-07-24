@@ -3,3 +3,10 @@ C:\Sistema\Fontes SOFT\softplace\desktop\obj\Debug\desktop.MainForm.resources
 C:\Sistema\Fontes SOFT\softplace\desktop\obj\Debug\desktop.csproj.GenerateResource.Cache
 C:\Sistema\Fontes SOFT\softplace\desktop\obj\Debug\desktop.exe
 C:\Sistema\Fontes SOFT\softplace\desktop\obj\Debug\desktop.pdb
+c:\soft\desktop.exe
+c:\soft\desktop.pdb
+C:\Sistema\Fontes SOFT\git\desktop\desktop\obj\Debug\ResolveAssemblyReference.cache
+C:\Sistema\Fontes SOFT\git\desktop\desktop\obj\Debug\desktop.MainForm.resources
+C:\Sistema\Fontes SOFT\git\desktop\desktop\obj\Debug\desktop.csproj.GenerateResource.Cache
+C:\Sistema\Fontes SOFT\git\desktop\desktop\obj\Debug\desktop.exe
+C:\Sistema\Fontes SOFT\git\desktop\desktop\obj\Debug\desktop.pdb

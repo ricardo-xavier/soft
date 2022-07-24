@@ -801,6 +801,14 @@ namespace orcamento
 					return;
 			}
 			
+
+			if (OrcamentoSemAcao(cliente)) {
+				if (!Globais.bAdministrador) {
+					MessageBox.Show("Esse pedido só pode ser gerado pelo administrador. Não existe Ação para o Cliente.");
+					return;
+				}
+			}
+			
 			fGeraPedido frm = new fGeraPedido(dif, fornecedor, data, codigo, vlr_itens, vlr_desconto, servico, sinal, cliente, dias);
 			frm.ShowDialog();
 			if (frm.result)
@@ -817,6 +825,33 @@ namespace orcamento
 				dgvCadastro.Rows[i].Cells["P"].Value = 'S';
 				dgvCadastro.Rows[i].Cells["Situação"].Value = "Fechado";
 			}
+		}
+		
+		bool OrcamentoSemAcao(string codCliente) {
+			FbCommand cmd = new FbCommand("select SEQ_ACAO " +
+			                              "from ACOES_COMERCIAIS " +
+			                              "where COD_CLIENTE='" + codCliente.Trim() + "'",
+			                              Globais.bd);
+			FbDataReader reader = cmd.ExecuteReader(CommandBehavior.Default);
+			int resp = 0;
+			if (reader.Read()) {
+				resp = reader.GetInt32(0);
+			}
+			reader.Close();
+			if (resp != 0) {
+				return true;
+			}
+
+			cmd = new FbCommand("select SEQ_ACAO " +
+			                    "from CLIENTES_ACAO " +
+			                    "where COD_CLIENTE='" + codCliente.Trim() + "'",
+			                    Globais.bd);
+			reader = cmd.ExecuteReader(CommandBehavior.Default);
+			if (reader.Read()) {
+				resp = reader.GetInt32(0);
+			}
+			reader.Close();
+			return resp != 0;
 		}
 		
 		void BtnRefreshClick(object sender, EventArgs e)
