@@ -24,7 +24,7 @@ public class BancoDados {
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			}
-            String url = "jdbc:firebirdsql://softplacemoveis.dyndns.org:3050/softplace/SISTEMA/producao/softplace_bh.fdb?encoding=ISO8859_1";
+			String url = "jdbc:firebirdsql://softplacemoveis.dyndns.org:3050//Sistema/producao/softplace_bh.fdb?encoding=ISO8859_1";
             bd = DriverManager.getConnection(url, "sysdba", "masterkey");
     		
     	}

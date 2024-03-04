@@ -305,7 +305,6 @@ public class PdfEncerramento {
 			if (dados.size() > 5) {
 				String resp = dados.get(5);
 				func = FuncionarioDao.get(resp, bd);
-				System.out.println("resp=" + func.getNome() + " " + func.getFone());
 			}
 			
 			if (codCliente != null) {
