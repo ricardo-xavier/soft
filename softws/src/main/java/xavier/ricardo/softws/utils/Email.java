@@ -19,6 +19,8 @@ import javax.mail.internet.MimeMultipart;
 
 public class Email {
 
+	// com a mudanca do servidor para kinghost, o email nao estava mais sendo enviado para multiplos destinatarios
+	// a solucao foi enviar para um de cada vez
 	public static void envia(String from, String to, final String username, final String password, String subject, String content,
 			String filename) {
 
@@ -52,10 +54,7 @@ public class Email {
 			message.setFrom(new InternetAddress(from));
 
 			// Set To: header field of the header.
-			String[] destinatarios = to.split(";");
-			for (String d : destinatarios) {
-				message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(d));
-			}
+			message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
 
 			// Set Subject: header field
 			message.setSubject(subject);
@@ -85,7 +84,7 @@ public class Email {
 			// Send message
 			Transport.send(message);
 
-			System.out.println("Sent message successfully....");
+			System.out.printf("Sent message successfully to %s%n", to);
 
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);
@@ -96,9 +95,9 @@ public class Email {
 		String from = "remoto@softp.com.br";
 		String to = "ricardo.costa.xavier@gmail.com";
 		String username = "remoto@softp.com.br";
-		String password = null;
+		String password = "soft101010";
 		String subject = "teste";
-		String content = "pom.xm";
+		String content = "pom.xml";
 		String filename =  "pom.xml";
 		Email.envia(from, to, username, password, subject, content, filename);
 	}

@@ -348,22 +348,25 @@ public class PdfEncerramento {
 			String remetente = prms.getRemetente();
 			String usuario = prms.getUsuario();
 			String senha = prms.getSenha();
-			String destinatarios = "";
-			for (String destinatario : prms.getDestinatarios()) {
-				if (!destinatarios.equals("")) {
-					destinatarios += ";";
-				}
-				destinatarios += destinatario;
-			}			
 			String assunto = prms.getAssunto().replace("$DATA$", df.format(new Date())).replace("$CLIENTE$", nomeCliente);
 			String texto = prms.getTexto().replace("$DATA$", df.format(new Date())).replace("$CLIENTE$", nomeCliente);
-			
-			Email.envia(remetente, 
-					destinatarios, 
-					usuario, senha, 
-					assunto,
-					texto,
-					pdf);
+
+			for (String destinatario : prms.getDestinatarios()) {
+				Email.envia(remetente,
+						destinatario,
+						usuario, senha,
+						assunto,
+						texto,
+						pdf);
+			}
+			if (encerramento.getEmail() != null && encerramento.getEmail().trim().length() > 2) {
+				Email.envia(remetente,
+						encerramento.getEmail(),
+						usuario, senha,
+						assunto,
+						texto,
+						pdf);
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
