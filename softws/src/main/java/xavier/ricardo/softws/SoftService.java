@@ -1,4 +1,4 @@
-package xavier.ricardo.softws;   
+package xavier.ricardo.softws;    
 
 import java.io.FileOutputStream;
 import java.io.IOException;
